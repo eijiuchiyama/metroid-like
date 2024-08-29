@@ -1,4 +1,4 @@
-# Megalovania Like
+# Metroid-Like Game
 
 
 
