@@ -4,9 +4,11 @@ Este projeto é iniciado como o trabalho solicitado pelo o curso [MAC0413/5714 -
 ## Descrição do jogo
 Durante o projeto implementaremos os mecânismos mais significantes do jogo clássico Metroid:
 
-![Functions of game](images/image.png)
+![Features](Estrutura do jogo/Features.png)
 
 A base nisso, construimos os diagramas de classes para ajudar o processo de desenvolvimento:
+
+![Class](Estrutura do jogo/Class.jpg)
 
 ## Entrega do projeto
 A entrega é dividido em múltiplas etapas
