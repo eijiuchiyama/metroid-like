@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwuomcfkrils8"]
+
+[ext_resource type="Texture2D" uid="uid://bg0hjsjqlb663" path="res://assets/testAsset/Super Metroid - Object.png" id="2_i1nvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_804m6"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(350, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hful5"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(370, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj7my"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(390, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdlmh"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(410, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojqve"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(390, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsfai"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(370, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrw0c"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(282, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emrij"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(302, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eden5"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(322, 228, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udr3d"]
+atlas = ExtResource("2_i1nvf")
+region = Rect2(302, 228, 20, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrd5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_804m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hful5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj7my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdlmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojqve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsfai")
+}],
+"loop": true,
+"name": &"big",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrw0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emrij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eden5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udr3d")
+}],
+"loop": true,
+"name": &"small",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ir4l"]
+radius = 4.0
+
+[node name="LifeDrop" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lrd5s")
+animation = &"big"
+frame_progress = 0.45509
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5ir4l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
