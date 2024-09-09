@@ -32,7 +32,7 @@ Lucas Eiji Uchiyama - 11807470
 
 Marcelo Spessoto
 
-## Orientador do projeto
-Fabio Kon
+## Orientadores do projeto
+Fabio Kon: Professor
 
-Isaque Alves
+Isaque Alves: Monitor
