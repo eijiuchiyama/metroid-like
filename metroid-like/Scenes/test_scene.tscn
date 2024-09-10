@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dksv8feabhd4u"]
+
+[ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="1_1pp56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeil"]
+size = Vector2(737.5, 39)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Platform"]
+offset_left = 185.0
+offset_top = 556.0
+offset_right = 922.0
+offset_bottom = 596.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(554, 575.5)
+shape = SubResource("RectangleShape2D_kkeil")
+
+[node name="Node2D" parent="." instance=ExtResource("1_1pp56")]
+position = Vector2(502, 315)

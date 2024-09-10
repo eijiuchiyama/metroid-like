@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4585x0lkhthk"]
+
+[ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
+[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/walk_state.gd" id="2_daa7g"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/idle_state.gd" id="2_n2whw"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/jump_state.gd" id="4_5jux8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
+size = Vector2(84, 152)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_a72ib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 74)
+shape = SubResource("RectangleShape2D_03pdv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 85.0
+offset_bottom = 150.0
+
+[node name="MovementStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("1_2brj2")
+current_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("walk_state")]
+script = ExtResource("2_n2whw")
+walk_state = NodePath("../WalkState")
+
+[node name="WalkState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("2_daa7g")
+idle_state = NodePath("../IdleState")
+
+[node name="JumpState" type="Node" parent="MovementStateManager"]
+script = ExtResource("4_5jux8")
+
+[node name="ModeStateManager" type="Node" parent="."]
+
+[node name="HumanState" type="Node" parent="ModeStateManager"]
+
+[node name="BallState" type="Node" parent="ModeStateManager"]
