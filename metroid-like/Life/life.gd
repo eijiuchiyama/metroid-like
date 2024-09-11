@@ -2,14 +2,16 @@ class_name Life extends Node2D
 
 var hp
 var hpMax
-bool visible
+var is_visible : bool # visible é variavel reservado, não se pode usar
 
-func Life(var _hp, var _hpMax, bool _visible) -> void:
+func Life(_hp, _hpMax, _visible) -> void: #não pode colocar var nos parametros, para definir tipo, use XXX : YYY
 	pass
 
 func getHp() -> int:
+	return 0 #Só para eliminar erro
 	pass
 func getHpMax() -> int:
+	return 0 #Só para eliminar erro
 	pass
 func setHp() -> void:
 	pass
