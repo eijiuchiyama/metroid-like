@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=8 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
 [ext_resource type="Script" path="res://Characters/Player/MovementStates/walk_state.gd" id="2_daa7g"]
 [ext_resource type="Script" path="res://Characters/Player/MovementStates/idle_state.gd" id="2_n2whw"]
 [ext_resource type="Script" path="res://Characters/Player/MovementStates/jump_state.gd" id="4_5jux8"]
+[ext_resource type="Script" path="res://Weapon/weapon_system.gd" id="6_3iqfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
@@ -42,3 +43,6 @@ script = ExtResource("4_5jux8")
 [node name="HumanState" type="Node" parent="ModeStateManager"]
 
 [node name="BallState" type="Node" parent="ModeStateManager"]
+
+[node name="WeaponMarker" type="Marker2D" parent="."]
+script = ExtResource("6_3iqfe")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dksv8feabhd4u"]
+[gd_scene load_steps=5 format=3 uid="uid://dksv8feabhd4u"]
 
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="1_1pp56"]
+[ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="2_3oa4h"]
+[ext_resource type="PackedScene" uid="uid://b5b3ly41fv73f" path="res://Item/MissileDrop.tscn" id="3_ep8fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeil"]
 size = Vector2(737.5, 39)
@@ -21,3 +23,9 @@ shape = SubResource("RectangleShape2D_kkeil")
 
 [node name="Node2D" parent="." instance=ExtResource("1_1pp56")]
 position = Vector2(502, 315)
+
+[node name="SceneUi" parent="." instance=ExtResource("2_3oa4h")]
+
+[node name="MissileDrop" parent="." instance=ExtResource("3_ep8fg")]
+position = Vector2(305, 369)
+scale = Vector2(3, 3)
