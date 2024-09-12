@@ -5,21 +5,23 @@ var hpMax
 var is_visible : bool # visible é variavel reservado, não se pode usar
 
 func Life(_hp, _hpMax, _visible) -> void: #não pode colocar var nos parametros, para definir tipo, use XXX : YYY
-	pass
+	setHp(_hp)
+	setHpMax(_hpMax)
 
 func getHp() -> int:
-	return 0 #Só para eliminar erro
-	pass
+	return hp
 func getHpMax() -> int:
-	return 0 #Só para eliminar erro
-	pass
-func setHp() -> void:
-	pass
-func setHpMax() -> void:
-	pass
-func addHp() -> void:
-	pass
-func subHp() -> void:
-	pass
+	return hpMax
+func setHp(_hp) -> void:
+	hp = _hp
+	return
+func setHpMax(_hpMax) -> void:
+	hpMax = _hpMAx
+	return
+func addHp(n) -> void:
+	hp = hp + n
+	return
+func subHp(n) -> void:
+	addHp(-n)
 func special() -> void: # Seria uma função virtual em C++ a ser implementada na subclasse que herdar Life (associada ao tipo de personagem que tem a vida
-	pass
+	return 0 # Se a subclasse não tiver um polimorfismo para esta função, a função apenas não faz nada
