@@ -16,7 +16,7 @@ func setHp(_hp) -> void:
 	hp = _hp
 	return
 func setHpMax(_hpMax) -> void:
-	hpMax = _hpMAx
+	hpMax = _hpMax
 	return
 func addHp(n) -> void:
 	hp = hp + n
@@ -24,4 +24,4 @@ func addHp(n) -> void:
 func subHp(n) -> void:
 	addHp(-n)
 func special() -> void: # Seria uma função virtual em C++ a ser implementada na subclasse que herdar Life (associada ao tipo de personagem que tem a vida
-	return 0 # Se a subclasse não tiver um polimorfismo para esta função, a função apenas não faz nada
+	return # Se a subclasse não tiver um polimorfismo para esta função, a função apenas não faz nada
