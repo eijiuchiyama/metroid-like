@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6qqvufcte02r"
-path="res://.godot/imported/missileicone.png-62dab4541908d309c8c183cc2a69d920.ctex"
+uid="uid://pa3hx74j677t"
+path="res://.godot/imported/text1.png-e5abc0cd3ae065be0c98e57ed4856dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/testAsset/missileicone.png"
-dest_files=["res://.godot/imported/missileicone.png-62dab4541908d309c8c183cc2a69d920.ctex"]
+source_file="res://examples/submitted_1/text1.png"
+dest_files=["res://.godot/imported/text1.png-e5abc0cd3ae065be0c98e57ed4856dd8.ctex"]
 
 [params]
 
