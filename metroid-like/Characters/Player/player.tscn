@@ -45,4 +45,5 @@ script = ExtResource("4_5jux8")
 [node name="BallState" type="Node" parent="ModeStateManager"]
 
 [node name="WeaponMarker" type="Marker2D" parent="."]
+position = Vector2(100, 70)
 script = ExtResource("6_3iqfe")

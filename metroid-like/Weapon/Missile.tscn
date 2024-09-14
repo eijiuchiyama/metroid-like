@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://byy8y0x2cbt6"]
+[gd_scene load_steps=13 format=3 uid="uid://byy8y0x2cbt6"]
 
+[ext_resource type="Script" path="res://Weapon/missile.gd" id="1_1jqn2"]
 [ext_resource type="Texture2D" uid="uid://c3voivlpedwho" path="res://assets/testAsset/Super Metroid - Weapon.png" id="1_t0220"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6nd4"]
@@ -104,14 +105,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4a7i"]
 size = Vector2(10, 7)
 
-[node name="Missile" type="Node2D"]
+[node name="Missile" type="Area2D"]
+script = ExtResource("1_1jqn2")
 
 [node name="MissileSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_owqym")
-animation = &"UR"
+animation = &"R"
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_a4a7i")
