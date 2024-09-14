@@ -1,4 +1,4 @@
-extends State 
+extends BaseMovementState
 
 func init_state() -> void:
 	pass

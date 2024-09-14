@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=23 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -6,9 +6,77 @@
 [ext_resource type="Script" path="res://Characters/Player/MovementStates/idle_state.gd" id="2_n2whw"]
 [ext_resource type="Script" path="res://Characters/Player/MovementStates/jump_state.gd" id="4_5jux8"]
 [ext_resource type="Script" path="res://Weapon/weapon_system.gd" id="6_3iqfe"]
+[ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_tb7uj"]
+[ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_62cyk"]
+[ext_resource type="Texture2D" uid="uid://wtlf0gma8qb6" path="res://assets/playerSprites/Spritesplayer/playeridle.png" id="9_k2rqf"]
+[ext_resource type="Texture2D" uid="uid://bguxpjecocxjo" path="res://assets/playerSprites/Spritesplayer/ball1.png" id="9_s0eq2"]
+[ext_resource type="Texture2D" uid="uid://dxd51pr7ctiu5" path="res://assets/playerSprites/Spritesplayer/ball2.png" id="10_8m16t"]
+[ext_resource type="Texture2D" uid="uid://dmtacb6jf77dv" path="res://assets/playerSprites/Spritesplayer/playerwalk1.png" id="10_xx5n6"]
+[ext_resource type="Texture2D" uid="uid://x8xs7tjgdco3" path="res://assets/playerSprites/Spritesplayer/ball3.png" id="11_n2l05"]
+[ext_resource type="Texture2D" uid="uid://c4fawbnduhonm" path="res://assets/playerSprites/Spritesplayer/playerwalk2.png" id="11_we3w6"]
+[ext_resource type="Texture2D" uid="uid://d1jd7b5kpeoc7" path="res://assets/playerSprites/Spritesplayer/playerwalk3.png" id="12_l0u03"]
+[ext_resource type="Texture2D" uid="uid://dg44oapao5i70" path="res://assets/playerSprites/Spritesplayer/ball4.png" id="12_qcw8k"]
+[ext_resource type="Texture2D" uid="uid://boosrxaypwco0" path="res://assets/playerSprites/Spritesplayer/playerwalk4.png" id="13_uv1mk"]
+[ext_resource type="Texture2D" uid="uid://cafapovsmfk78" path="res://assets/playerSprites/Spritesplayer/playerwalk5.png" id="14_svb8f"]
+[ext_resource type="Texture2D" uid="uid://cjodr2rm5xwhm" path="res://assets/playerSprites/Spritesplayer/playerwalk6.png" id="15_gywq4"]
+[ext_resource type="Texture2D" uid="uid://dv5fmbghemxy7" path="res://assets/playerSprites/Spritesplayer/playerwalk7.png" id="16_3a8yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gacwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s0eq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8m16t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n2l05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qcw8k")
+}],
+"loop": true,
+"name": &"ball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_k2rqf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xx5n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_we3w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l0u03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uv1mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_svb8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gywq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3a8yb")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="CharacterBody2D"]
 script = ExtResource("1_a72ib")
@@ -16,12 +84,6 @@ script = ExtResource("1_a72ib")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(43, 74)
 shape = SubResource("RectangleShape2D_03pdv")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 85.0
-offset_bottom = 150.0
 
 [node name="MovementStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("1_2brj2")
@@ -38,12 +100,22 @@ idle_state = NodePath("../IdleState")
 [node name="JumpState" type="Node" parent="MovementStateManager"]
 script = ExtResource("4_5jux8")
 
-[node name="ModeStateManager" type="Node" parent="."]
+[node name="ModeStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("1_2brj2")
+current_state = NodePath("HumanState")
 
 [node name="HumanState" type="Node" parent="ModeStateManager"]
+script = ExtResource("6_tb7uj")
 
 [node name="BallState" type="Node" parent="ModeStateManager"]
+script = ExtResource("7_62cyk")
 
 [node name="WeaponMarker" type="Marker2D" parent="."]
 position = Vector2(100, 70)
 script = ExtResource("6_3iqfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(44, 81)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gacwv")
+animation = &"walking"
