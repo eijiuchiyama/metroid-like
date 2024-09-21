@@ -7,10 +7,11 @@ enum mode {
 	Ball	
 } 
 var actual_mode : mode
+var horizontal_direction : int
 
 func _ready() -> void:
 	actual_mode = mode.Human
-	vertical_speed = 1
+	self.velocity.y = 100
 	
 func _process(delta: float) -> void:
 	pass

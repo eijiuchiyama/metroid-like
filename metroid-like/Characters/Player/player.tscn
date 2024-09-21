@@ -82,7 +82,7 @@ animations = [{
 script = ExtResource("1_a72ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43, 74)
+position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_03pdv")
 
 [node name="MovementStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
@@ -110,12 +110,22 @@ script = ExtResource("6_tb7uj")
 [node name="BallState" type="Node" parent="ModeStateManager"]
 script = ExtResource("7_62cyk")
 
-[node name="WeaponMarker" type="Marker2D" parent="."]
-position = Vector2(100, 70)
+[node name="WeaponMarker" type="Marker2D" parent="." node_paths=PackedStringArray("east_marker_position", "west_marker_position")]
+position = Vector2(45, 0)
 script = ExtResource("6_3iqfe")
+east_marker_position = NodePath("../MarkerPositions/EastMarkerPosition")
+west_marker_position = NodePath("../MarkerPositions/WestMarkerPosition")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(44, 81)
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gacwv")
 animation = &"walking"
+
+[node name="MarkerPositions" type="Node" parent="."]
+
+[node name="EastMarkerPosition" type="Node2D" parent="MarkerPositions"]
+position = Vector2(45, 0)
+
+[node name="WestMarkerPosition" type="Node2D" parent="MarkerPositions"]
+position = Vector2(-45, 0)

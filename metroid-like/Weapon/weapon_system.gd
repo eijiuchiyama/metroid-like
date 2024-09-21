@@ -9,6 +9,11 @@ var weaponIndex = WeaponID.Gun
 var direction = Vector2(1, 0)
 var missileQty = 0
 
+@export 
+var east_marker_position : Node2D
+@export
+var west_marker_position : Node2D
+
 func _ready() -> void:
 	missileQty = 0
 	GlobalSignals.missile_change.connect(_missile_change)
@@ -29,3 +34,11 @@ func switch() -> void:
 func _missile_change(value) -> void:
 	missileQty = max(missileQty + value, 0)
 	GlobalSignals.missile_ui_update.emit(missileQty)
+
+func toggle_position(dir : String):
+	if dir == "right":
+		self.position = east_marker_position.position
+		direction = Vector2(1, 0)
+	elif dir == "left":
+		self.position = west_marker_position.position
+		direction = Vector2(-1, 0)

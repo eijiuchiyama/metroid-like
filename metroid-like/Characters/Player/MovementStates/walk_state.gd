@@ -4,8 +4,8 @@ extends BaseMovementState
 var idle_state : State
 
 func init_state() -> void:
-	pass
+	player_sprite.play("walking")
 	
 func update_state() -> void:
-		if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-			state_manager.switch_state(idle_state)
+	if player_body.velocity.x == 0:
+		state_manager.switch_state(idle_state)
