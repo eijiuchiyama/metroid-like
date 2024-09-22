@@ -30,7 +30,7 @@ Fernando Yang - 13671744
 
 Lucas Eiji Uchiyama - 11807470
 
-Marcelo Spessoto
+Marcelo Mendes Spessoto Junior - 12542380
 
 ## Orientadores do projeto
 Fabio Kon: Professor
