@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=18 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -8,70 +8,58 @@
 [ext_resource type="Script" path="res://Weapon/weapon_system.gd" id="6_3iqfe"]
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_tb7uj"]
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_62cyk"]
-[ext_resource type="Texture2D" uid="uid://wtlf0gma8qb6" path="res://assets/playerSprites/Spritesplayer/playeridle.png" id="9_k2rqf"]
-[ext_resource type="Texture2D" uid="uid://bguxpjecocxjo" path="res://assets/playerSprites/Spritesplayer/ball1.png" id="9_s0eq2"]
-[ext_resource type="Texture2D" uid="uid://dxd51pr7ctiu5" path="res://assets/playerSprites/Spritesplayer/ball2.png" id="10_8m16t"]
-[ext_resource type="Texture2D" uid="uid://dmtacb6jf77dv" path="res://assets/playerSprites/Spritesplayer/playerwalk1.png" id="10_xx5n6"]
-[ext_resource type="Texture2D" uid="uid://x8xs7tjgdco3" path="res://assets/playerSprites/Spritesplayer/ball3.png" id="11_n2l05"]
-[ext_resource type="Texture2D" uid="uid://c4fawbnduhonm" path="res://assets/playerSprites/Spritesplayer/playerwalk2.png" id="11_we3w6"]
-[ext_resource type="Texture2D" uid="uid://d1jd7b5kpeoc7" path="res://assets/playerSprites/Spritesplayer/playerwalk3.png" id="12_l0u03"]
-[ext_resource type="Texture2D" uid="uid://dg44oapao5i70" path="res://assets/playerSprites/Spritesplayer/ball4.png" id="12_qcw8k"]
-[ext_resource type="Texture2D" uid="uid://boosrxaypwco0" path="res://assets/playerSprites/Spritesplayer/playerwalk4.png" id="13_uv1mk"]
-[ext_resource type="Texture2D" uid="uid://cafapovsmfk78" path="res://assets/playerSprites/Spritesplayer/playerwalk5.png" id="14_svb8f"]
-[ext_resource type="Texture2D" uid="uid://cjodr2rm5xwhm" path="res://assets/playerSprites/Spritesplayer/playerwalk6.png" id="15_gywq4"]
-[ext_resource type="Texture2D" uid="uid://dv5fmbghemxy7" path="res://assets/playerSprites/Spritesplayer/playerwalk7.png" id="16_3a8yb"]
+[ext_resource type="Texture2D" uid="uid://chowjbqhkbbm" path="res://assets/playerSprites/playerwalk1.png" id="9_ktle3"]
+[ext_resource type="Texture2D" uid="uid://bv18bet5oubon" path="res://assets/playerSprites/playerwalk2.png" id="10_44w0k"]
+[ext_resource type="Texture2D" uid="uid://dbuiodidvc8s4" path="res://assets/playerSprites/playerwalk3.png" id="11_jto31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ad5p"]
+load_path = "res://.godot/imported/ball1.png-c0c217ce868c7448fc8150e99eb03957.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_56thd"]
+load_path = "res://.godot/imported/ball2.png-02e04e657be2bb664fe58d457d321d3b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ixich"]
+load_path = "res://.godot/imported/ball3.png-78d9a0ae3c71e33de32f2c46c38cb7f4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ppwse"]
+load_path = "res://.godot/imported/ball4.png-aaf4f63db883f70280bb21d93de546f3.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gacwv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_s0eq2")
+"texture": SubResource("CompressedTexture2D_3ad5p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_8m16t")
+"texture": SubResource("CompressedTexture2D_56thd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_n2l05")
+"texture": SubResource("CompressedTexture2D_ixich")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_qcw8k")
+"texture": SubResource("CompressedTexture2D_ppwse")
 }],
 "loop": true,
 "name": &"ball",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_k2rqf")
-}],
+"frames": [],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_xx5n6")
+"texture": ExtResource("9_ktle3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_we3w6")
+"texture": ExtResource("10_44w0k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_l0u03")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_uv1mk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_svb8f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_gywq4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_3a8yb")
+"texture": ExtResource("11_jto31")
 }],
 "loop": true,
 "name": &"walking",
@@ -121,6 +109,7 @@ position = Vector2(-1, -1)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gacwv")
 animation = &"walking"
+frame_progress = 0.0797142
 
 [node name="MarkerPositions" type="Node" parent="."]
 
