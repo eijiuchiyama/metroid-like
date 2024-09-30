@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=25 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_tb7uj"]
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_62cyk"]
 [ext_resource type="Texture2D" uid="uid://cdh0nkqafjpog" path="res://assets/Spritesplayer/playerwalk1.png" id="9_3h5nc"]
+[ext_resource type="Texture2D" uid="uid://bxvvf1jdrb4ei" path="res://assets/Spritesplayer/ball1.png" id="9_ha0ao"]
 [ext_resource type="Texture2D" uid="uid://dtrp12ibvgxt7" path="res://assets/Spritesplayer/playerwalk2.png" id="10_2263s"]
+[ext_resource type="Texture2D" uid="uid://bh1ff1vhumk23" path="res://assets/Spritesplayer/playerjump.png" id="10_emee6"]
 [ext_resource type="Texture2D" uid="uid://2lg34reyasuh" path="res://assets/Spritesplayer/playerwalk3.png" id="11_880qr"]
 [ext_resource type="Texture2D" uid="uid://b20pu1lunhgv1" path="res://assets/Spritesplayer/playerwalk4.png" id="12_qa5rb"]
 [ext_resource type="Texture2D" uid="uid://c22gn3m3x2mg6" path="res://assets/Spritesplayer/playerwalk5.png" id="13_jsytd"]
@@ -36,6 +38,30 @@ load_path = "res://.godot/imported/ball4.png-aaf4f63db883f70280bb21d93de546f3.ct
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_ha0ao")
+}],
+"loop": true,
+"name": &"ball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3h5nc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_emee6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("CompressedTexture2D_3ad5p")
 }, {
 "duration": 1.0,
@@ -48,15 +74,7 @@ animations = [{
 "texture": SubResource("CompressedTexture2D_ppwse")
 }],
 "loop": true,
-"name": &"ball",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_3h5nc")
-}],
-"loop": true,
-"name": &"idle",
+"name": &"roll",
 "speed": 10.0
 }, {
 "frames": [{
@@ -89,7 +107,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a72ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -100,16 +118,20 @@ shape = SubResource("RectangleShape2D_03pdv")
 script = ExtResource("1_2brj2")
 current_state = NodePath("IdleState")
 
-[node name="IdleState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("walk_state")]
+[node name="IdleState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("walk_state", "jump_state")]
 script = ExtResource("2_n2whw")
 walk_state = NodePath("../WalkState")
+jump_state = NodePath("../JumpState")
 
-[node name="WalkState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state")]
+[node name="WalkState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state", "jump_state")]
 script = ExtResource("2_daa7g")
 idle_state = NodePath("../IdleState")
+jump_state = NodePath("../JumpState")
 
-[node name="JumpState" type="Node" parent="MovementStateManager"]
+[node name="JumpState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state", "player")]
 script = ExtResource("4_5jux8")
+idle_state = NodePath("../IdleState")
+player = NodePath("../..")
 
 [node name="ModeStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("1_2brj2")
@@ -118,8 +140,9 @@ current_state = NodePath("HumanState")
 [node name="HumanState" type="Node" parent="ModeStateManager"]
 script = ExtResource("6_tb7uj")
 
-[node name="BallState" type="Node" parent="ModeStateManager"]
+[node name="BallState" type="Node" parent="ModeStateManager" node_paths=PackedStringArray("human_state")]
 script = ExtResource("7_62cyk")
+human_state = NodePath("../HumanState")
 
 [node name="WeaponMarker" type="Marker2D" parent="." node_paths=PackedStringArray("east_marker_position", "west_marker_position")]
 position = Vector2(45, 0)
@@ -127,7 +150,7 @@ script = ExtResource("6_3iqfe")
 east_marker_position = NodePath("../MarkerPositions/EastMarkerPosition")
 west_marker_position = NodePath("../MarkerPositions/WestMarkerPosition")
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gacwv")

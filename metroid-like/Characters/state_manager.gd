@@ -1,8 +1,7 @@
 extends Node
 class_name StateManager
 
-@export
-var current_state : State
+@export var current_state : State
 
 func _ready() -> void:
 	current_state.init_state()

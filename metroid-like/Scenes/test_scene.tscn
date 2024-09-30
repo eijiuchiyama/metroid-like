@@ -12,13 +12,13 @@ size = Vector2(737.5, 39)
 [node name="Platform" type="StaticBody2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Platform"]
-offset_left = 185.0
-offset_top = 556.0
-offset_right = 922.0
-offset_bottom = 596.0
+offset_left = 166.0
+offset_top = 409.0
+offset_right = 903.0
+offset_bottom = 449.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(554, 575.5)
+position = Vector2(535, 428.5)
 shape = SubResource("RectangleShape2D_kkeil")
 
 [node name="Player" parent="." instance=ExtResource("1_1pp56")]
