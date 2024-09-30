@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=23 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -8,9 +8,14 @@
 [ext_resource type="Script" path="res://Weapon/weapon_system.gd" id="6_3iqfe"]
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_tb7uj"]
 [ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_62cyk"]
-[ext_resource type="Texture2D" uid="uid://chowjbqhkbbm" path="res://assets/playerSprites/playerwalk1.png" id="9_ktle3"]
-[ext_resource type="Texture2D" uid="uid://bv18bet5oubon" path="res://assets/playerSprites/playerwalk2.png" id="10_44w0k"]
-[ext_resource type="Texture2D" uid="uid://dbuiodidvc8s4" path="res://assets/playerSprites/playerwalk3.png" id="11_jto31"]
+[ext_resource type="Texture2D" uid="uid://cdh0nkqafjpog" path="res://assets/Spritesplayer/playerwalk1.png" id="9_3h5nc"]
+[ext_resource type="Texture2D" uid="uid://dtrp12ibvgxt7" path="res://assets/Spritesplayer/playerwalk2.png" id="10_2263s"]
+[ext_resource type="Texture2D" uid="uid://2lg34reyasuh" path="res://assets/Spritesplayer/playerwalk3.png" id="11_880qr"]
+[ext_resource type="Texture2D" uid="uid://b20pu1lunhgv1" path="res://assets/Spritesplayer/playerwalk4.png" id="12_qa5rb"]
+[ext_resource type="Texture2D" uid="uid://c22gn3m3x2mg6" path="res://assets/Spritesplayer/playerwalk5.png" id="13_jsytd"]
+[ext_resource type="Texture2D" uid="uid://dkiumcor1sjgt" path="res://assets/Spritesplayer/playerwalk6.png" id="14_n8kih"]
+[ext_resource type="Texture2D" uid="uid://5minofyld1br" path="res://assets/Spritesplayer/playerwalk7.png" id="15_m31nv"]
+[ext_resource type="Texture2D" uid="uid://csmty4i2x0h34" path="res://assets/Spritesplayer/playerwalk8.png" id="16_0luxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
@@ -44,26 +49,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"ball",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_ktle3")
+"texture": ExtResource("9_3h5nc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3h5nc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_44w0k")
+"texture": ExtResource("10_2263s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_jto31")
+"texture": ExtResource("11_880qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qa5rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jsytd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n8kih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m31nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0luxp")
 }],
 "loop": true,
 "name": &"walking",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Node2D" type="CharacterBody2D"]
@@ -108,8 +131,7 @@ west_marker_position = NodePath("../MarkerPositions/WestMarkerPosition")
 position = Vector2(-1, -1)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gacwv")
-animation = &"walking"
-frame_progress = 0.0797142
+animation = &"ball"
 
 [node name="MarkerPositions" type="Node" parent="."]
 
