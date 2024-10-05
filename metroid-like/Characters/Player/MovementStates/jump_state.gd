@@ -1,10 +1,10 @@
-extends BaseMovementState
+extends State
 
 @export var idle_state: State
 @export var player: Player
 
 func init_state() -> void:
-	player_sprite.play("jump")
+	animation_manager.toggle_animation("jump")
 	
 func update_state() -> void:
 	if player.is_on_floor():

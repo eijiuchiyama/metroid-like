@@ -1,10 +1,10 @@
-extends BaseMovementState
+extends State
 
 @export var idle_state : State
 @export var jump_state: State
 
 func init_state() -> void:
-	player_sprite.play("walking")
+	animation_manager.toggle_animation("walking")
 	
 func update_state() -> void:
 	if player_body.velocity.x == 0:

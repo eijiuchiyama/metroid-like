@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cefncwgcgc2t"]
 
-[ext_resource type="Script" path="res://Weapon/gun.gd" id="1_n7gg8"]
+[ext_resource type="Script" path="res://Characters/Player/Weapon/gun.gd" id="1_n7gg8"]
 [ext_resource type="Texture2D" uid="uid://c3voivlpedwho" path="res://assets/testAsset/Super Metroid - Weapon.png" id="2_m6gwx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2oer8"]

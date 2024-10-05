@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddbgjd1634n71"]
+
+[ext_resource type="Texture2D" uid="uid://b4r2k2k46tao5" path="res://assets/Spritesplayer/armattackfront.png" id="1_miasp"]
+[ext_resource type="Script" path="res://Characters/Player/Weapon/weapon_system.gd" id="1_uy81u"]
+[ext_resource type="Texture2D" uid="uid://coiesndulu17h" path="res://assets/Spritesplayer/armattackfrontdown.png" id="2_r8oii"]
+[ext_resource type="Texture2D" uid="uid://pqllw0qaj6hc" path="res://assets/Spritesplayer/armattackfrontup.png" id="3_v8qxi"]
+[ext_resource type="Texture2D" uid="uid://bh076bmckbbr2" path="res://assets/Spritesplayer/armjump.png" id="4_ov45r"]
+[ext_resource type="Texture2D" uid="uid://b1h3wxndx3lvb" path="res://assets/Spritesplayer/armattackup.png" id="5_ml1lw"]
+
+[node name="PlayerArm" type="Node2D" node_paths=PackedStringArray("actual_arm")]
+script = ExtResource("1_uy81u")
+actual_arm = NodePath("AttackFront")
+
+[node name="AttackFront" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 18)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_miasp")
+
+[node name="Marker2D" type="Marker2D" parent="AttackFront"]
+position = Vector2(23.2, -10.4)
+
+[node name="AttackFDown" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 17)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_r8oii")
+
+[node name="Marker2D" type="Marker2D" parent="AttackFDown"]
+position = Vector2(13.6, 1.6)
+
+[node name="AttackFUp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_v8qxi")
+
+[node name="Marker2D" type="Marker2D" parent="AttackFUp"]
+position = Vector2(18.8, -18.8)
+
+[node name="Jump" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_ov45r")
+
+[node name="Marker2D" type="Marker2D" parent="Jump"]
+position = Vector2(12.4, -5.6)
+
+[node name="AttackUp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_ml1lw")
+
+[node name="Marker2D" type="Marker2D" parent="AttackUp"]
+position = Vector2(0.4, -28)
