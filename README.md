@@ -34,7 +34,7 @@ Dividimos as ações a serem realizadas com base nas fases, e atribuímos cada f
 
 ### Fase 1
 
-Na fase 1, implementamos os padrões estado (state) e fábrica (factory). Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
+Na fase 1, implementamos os padrões estado (state). Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
 
 ### Fase 2
 
