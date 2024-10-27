@@ -8,9 +8,9 @@ extends Node
 
 @onready var player_body = get_parent()
 
-@export var actual_arm = attack_front_arm
+@export var current_arm = attack_front_arm
 
-var actual_marker
+var current_marker
 
 enum WeaponID{
 	Gun, Missile, Bomb
@@ -25,7 +25,7 @@ func _ready() -> void:
 	missileQty = 0
 	GlobalSignals.missile_change.connect(_missile_change)
 	GlobalSignals.missile_ui_update.emit(missileQty)
-	actual_marker = actual_arm.get_node("Marker2D")
+	current_marker = current_arm.get_node("Marker2D")
 	
 func _process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -49,8 +49,8 @@ func fire() -> void:
 	}
 	
 	var bullet = load(weapons[weaponIndex]).instantiate()
-	var direction_x = 0 if actual_arm == attack_up else player_body.previous_direction
-	bullet.fire(actual_marker, 10*Vector2(direction_x, direction.y))
+	var direction_x = 0 if current_arm == attack_up else player_body.previous_direction
+	bullet.fire(current_marker, 10*Vector2(direction_x, direction.y))
 
 func switch() -> void:
 	weaponIndex = (weaponIndex + 1) % 2
@@ -60,8 +60,8 @@ func _missile_change(value) -> void:
 	GlobalSignals.missile_ui_update.emit(missileQty)
 	
 func select_arm(arm : Sprite2D):
-	actual_arm.hide()
-	actual_arm = arm
-	actual_marker = actual_arm.get_node("Marker2D")
-	actual_arm.show()
+	current_arm.hide()
+	current_arm = arm
+	current_marker = current_arm.get_node("Marker2D")
+	current_arm.show()
 	

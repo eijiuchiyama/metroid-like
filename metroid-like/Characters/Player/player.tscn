@@ -144,11 +144,10 @@ human_state = NodePath("../HumanState")
 z_index = 1
 position = Vector2(2, -19)
 
-[node name="AnimationManager" type="Node2D" parent="." node_paths=PackedStringArray("ball_sprite", "human_sprite", "actual_sprite")]
+[node name="AnimationManager" type="Node2D" parent="." node_paths=PackedStringArray("ball_sprite", "human_sprite")]
 script = ExtResource("9_31ktm")
 ball_sprite = NodePath("BallSprite")
 human_sprite = NodePath("HumanSprite")
-actual_sprite = NodePath("HumanSprite")
 
 [node name="BallSprite" type="AnimatedSprite2D" parent="AnimationManager"]
 visible = false

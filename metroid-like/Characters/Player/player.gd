@@ -10,12 +10,12 @@ enum mode {
 	Human,
 	Ball	
 } 
-var actual_mode : mode
+var current_mode : mode
 var previous_direction : int
 
 func _ready() -> void:
 	previous_direction = 1
-	actual_mode = mode.Human
+	current_mode = mode.Human
 	horizontal_speed = 500
 	vertical_speed = 350
 	gravity = 980
@@ -42,5 +42,5 @@ func _process(delta: float) -> void:
 	
 
 func is_human() -> bool: 
-	return actual_mode == mode.Human
+	return current_mode == mode.Human
 	
