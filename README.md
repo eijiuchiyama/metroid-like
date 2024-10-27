@@ -14,8 +14,8 @@ As imagens apresentadas no README estão armazenadas na pasta 'Estrutura do Jogo
 
 ## Instruções de Instalação
 
-## Entrega do projeto
-A entrega é dividido em múltiplas etapas:
+## Cronograma do projeto
+A entrega é dividida em múltiplas etapas:
 
 ### Fase 1
 Desenvolvemos os movimentos básicos do jogador, tais como andar, atirar, saltar, alternar entre as formas humana e bola. Como criamos o jogo através da engine Godot, a parte gráfica já começou a ser desenvolvida, e temos um protótipo minimamente funcional.
@@ -29,6 +29,18 @@ Esta é a entrega final do jogo completamente funcional.
 Até aqui, o código deverá utilizar ao menos 4 padrões de projeto distintos. Nesta fase, deverá ser implementada a tela inicial e serem criados testes automatizados para as classes. Adicionaremos músicas e efeitos sonoros nesta última fase também. A maior parte do mapa deverá estar pronta na fase 2, mas ele estará pronto ao final da fase 3. Também o chefe final do jogo (boss) será criado nesta fase.
 
 Dividimos as ações a serem realizadas com base nas fases, e atribuímos cada feature a ser criada a uma delas, como visto na parte de issues do projeto.
+
+## Relatório do projeto
+
+### Fase 1
+
+Na fase 1, implementamos os padrões estado (state) e fábrica (factory). Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
+
+### Fase 2
+
+Na fase 2, utilizando o padrão estratégia (strategy), implementamos a troca de armas. A máquina de estados, nesta fase, está mais completa que a anterior, tendo implementado a alternância entre as formas humana e bola. Começamos a criar os inimigos do jogo nesta fase, mas ainda não os havíamos adicionado nele.
+
+### Fase 3
 
 ## Integrantes do grupo e seus NUSP
 Atenágoras Silva - 5447262
