@@ -22,7 +22,6 @@ Desenvolvemos os movimentos básicos do jogador, tais como andar, atirar, saltar
 
 ### Fase 2
 Nesta fase, apresentaremos os padrões de projeto GoF utilizados até agora e explicaremos a vantagem oferecida pelo padrão. E nesta fase também implementaremos a interação do jogador com inimigos, tais como barra de vida, hitbox do inimigo e do jogador, mudança de arma, dentre outras features. Também adicionaremos a história ao jogo (cutscene inicial e demais apresentações da história) e criaremos a estrutura do mundo e os itens coletáveis. 
-Alguns padrões de projeto foram implementados na fase 1, como o padrão de máquina de estados (state machine).
 
 ### Fase 3
 Esta é a entrega final do jogo completamente funcional.
