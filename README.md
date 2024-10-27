@@ -1,5 +1,5 @@
 # Metroid-Like Game
-Este projeto é iniciado como o trabalho solicitado pelo o curso [MAC0413/5714 - Tópicos Avançados de Programação Orientada a Objetos (2024)](https://edisciplinas.usp.br/course/view.php?id=121856) oferecido pelo IME-USP no segundo semestre do ano 2024. Neste projeto implementaremos uma versão contemporânea do jogo clássico [Metroid](https://en.wikipedia.org/wiki/Metroid) utilizando a engine livre [Godot](https://godotengine.org/), oferecendo um novo projeto gráfico e uma estória alternativa.
+Este projeto é iniciado como o trabalho solicitado pelo curso [MAC0413/5714 - Tópicos Avançados de Programação Orientada a Objetos (2024)](https://edisciplinas.usp.br/course/view.php?id=121856) oferecido pelo IME-USP no segundo semestre do ano de 2024. Neste projeto implementaremos uma versão contemporânea do jogo clássico [Metroid](https://en.wikipedia.org/wiki/Metroid) utilizando a engine livre [Godot](https://godotengine.org/), oferecendo um novo projeto gráfico e uma estória alternativa.
 
 ## Descrição do jogo
 Durante o projeto, implementaremos os mecanismos mais característicos do jogo clássico Metroid a seguir:
@@ -9,6 +9,8 @@ Durante o projeto, implementaremos os mecanismos mais característicos do jogo c
 Com base nisto, construímos o diagrama de classes para ajudar o processo de desenvolvimento:
 
 ![Class](Estrutura do jogo/Class.jpg)
+
+As imagens apresentadas no README estão armazenadas na pasta 'Estrutura do Jogo'
 
 ## Instruções de Instalação
 
