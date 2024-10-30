@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bh076bmckbbr2" path="res://assets/Spritesplayer/armjump.png" id="4_ov45r"]
 [ext_resource type="Texture2D" uid="uid://b1h3wxndx3lvb" path="res://assets/Spritesplayer/armattackup.png" id="5_ml1lw"]
 
-[node name="PlayerArm" type="Node2D" node_paths=PackedStringArray("actual_arm")]
+[node name="PlayerArm" type="Node2D" node_paths=PackedStringArray("current_arm")]
 script = ExtResource("1_uy81u")
-actual_arm = NodePath("AttackFront")
+current_arm = NodePath("AttackFront")
 
 [node name="AttackFront" type="Sprite2D" parent="."]
 visible = false
