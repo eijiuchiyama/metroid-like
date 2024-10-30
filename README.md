@@ -10,6 +10,10 @@ Com base nisto, construímos o diagrama de classes para ajudar o processo de des
 
 ![Class](Estrutura do jogo/Class.jpg)
 
+**OBS: Durante o processo de desenvolvimento do jogo, muitas mudanças foram realizadas em relação às classes e o diagrama abaixo está desatualizado.
+Na seção de relatório, para cada padrão implementado, haverá uma seção explicando a implementação definitiva dele, e, para a entrega final, haverá 
+um novo diagrama de classes atualizado para a versão final do projeto.**
+
 As imagens apresentadas no README estão armazenadas na pasta 'Estrutura do Jogo'
 
 ## Instruções de Instalação
@@ -35,9 +39,42 @@ Dividimos as ações a serem realizadas com base nas fases, e atribuímos cada f
 
 Na fase 1, implementamos os padrões estado (state). Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
 
+#### Padrão de estados (State pattern)
+
+O padrão de estados foi utilizado para a implementação do movimento do jogador. O jogador possui uma relação de dependência com a classe State que, por sua vez realiza uma relação de associação com a StateManager. 
+
+##### StateManager
+
+A classe StateManager é bem simples e define a função switch_state. Tal método é responsável por definir o current_state. Nas funções built-in _ready e _process do Godot, a classe StateManager, respectivamente, inicializa e atualiza o current_state. 
+
+##### State 
+
+A classe State possui acesso ao seu respectivo StateManager, ao corpo do jogador, ao gerenciador de animações do jogador e ao braço do jogador. Define os métodos update_state e init_state. 
+
+Essa classe, por sua vez, é especializada em subclasses IdleState, WalkState, JumpState que representam, respectivamente, os estados de jogador parado, andando e pulando.
+
+No momento atual, esses estados simplesmente gerenciam animações de jogador conforme o estado, mas a lógica de movimentação permanece concentrada no código do jogador, pois parte da lógica de cada estado é utilizada por outros estados. Por exemplo, enquanto pula, um jogador pode se deslocar horizontalmente e utilizar a lógica do estado Andando. 
+
+Entretanto, a adoção de tal padrão ainda é interessante para o projeto visando uma manutenção a longo prazo, pois os estados podem gerenciar outros aspectos além da animação do jogador. É comum em jogos, por exemplo, que alguns atributos do jogador sejam diferentes entre estados. Em um balanceamento do jogo, pode se tornar desejável que o deslocamento horizontal do jogador tenha velocidade diferente quando ele está simplesmente andando ou quando ele está no ar (no meio de um pulo ou queda). O valor momentâneo de um atributo é algo que pode ser gerenciado pelo estado. 
+
+Em resumo, conforme a complexidade de um jogo aumenta, os estados tendem a possuirem maiores especificidades e propriedades únicas. No estado atual do projeto, a adoção do padrão auxilia no gerenciamento de animações e facilita a adição de futuras funcionalidades. Outra observação é que a habilidade de atirar está sendo implementada por outro membro do grupo e com base no padrão Estratégia, mas, em um momento no futuro, espera-se incorporar a lógica de tiro em um novo estado.
+
+![Class](Estrutura do jogo/State.jpg)
+
+Observação: Esse diagrama representa como o padrão foi implementado via script. Em Godot, existe a separação entre cenas/nós e scripts (código atribuído ao nó). Na cena do jogador, o nó do jogador "contém" o nó do StateManager (ou seja é nó pai do nó StateManger), mas, por código, não há interação direta entre essas classes. 
+
 ### Fase 2
 
 Na fase 2, utilizando o padrão estratégia (strategy), implementamos a troca de armas. A máquina de estados, nesta fase, está mais completa que a anterior, tendo implementado a alternância entre as formas humana e bola. Começamos a criar os inimigos do jogo nesta fase, mas ainda não os havíamos adicionado nele.
+
+#### Atualizações no padrão de Estados (State Pattern)
+
+Durante a fase 1, o padrão de estados foi implementado, como descrito acima. Entretanto, mudanças foram adotadas durante a parte 2 para adicionar incrementar o jogo.
+
+O projeto é inspirado na série de jogos Metroid, em que a personagem principal possui, como uma de suas habilidades mais icônicas, a capacidade de 
+alternar de formas: forma antropomórfica e forma de "bola". A primeira é a forma padrão e "humana", em que a personagem pode ficar parada, atirar, pular e andar. Na segunda forma, a personagem fica menor e pode acessar áreas estreitas, mas também pode ficar parada e andar. Com pequnas variações, pode também pular após o desbloqueio da habilidade de pulo para essa forma e lançar bombas (do ponto de vista de impementação, é um "tiro" que adota outra estratégia do padrão Estratégia).
+
+Repare que ambas as formas compartilham uma máquina de estados quase idêntica. Criar estados "bolaIdle", "bolaWalk", "bolaJump" seria extremamente redundante. A solução para incorporar essa mecânica de jogo com o padrão de estados foi a adoção de máquinas de estados concorrentes. Existem dois StateManager agora. O primeiro StateManger é o descrito na fase 1. O segundo StateManager é um gerenciador de estados que gerencia dois estados: os novos estados humana e bola. Esses estados, quando aplicados (ou seja, durante a execução do método init_state), definem os novos sprites de idle, walking, jumping do gerenciador de animações do personagem, a nova hitbox e (ainda não implementado, mas planejado para a entrega), a nova estratégia de tiro, de acordo com o novo estado.
 
 ### Fase 3
 
