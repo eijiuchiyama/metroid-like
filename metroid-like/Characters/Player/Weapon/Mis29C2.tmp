@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://byy8y0x2cbt6"]
+
+[ext_resource type="Script" path="res://Characters/Player/Weapon/missile.gd" id="1_1jqn2"]
+[ext_resource type="Texture2D" uid="uid://c3voivlpedwho" path="res://assets/testAsset/Super Metroid - Weapon.png" id="1_t0220"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6nd4"]
+atlas = ExtResource("1_t0220")
+region = Rect2(35, 58, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff1ik"]
+atlas = ExtResource("1_t0220")
+region = Rect2(6, 58, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ofvp"]
+atlas = ExtResource("1_t0220")
+region = Rect2(64, 58, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tok4b"]
+atlas = ExtResource("1_t0220")
+region = Rect2(6, 29, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq6df"]
+atlas = ExtResource("1_t0220")
+region = Rect2(64, 29, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h8tq"]
+atlas = ExtResource("1_t0220")
+region = Rect2(35, 0, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjrf3"]
+atlas = ExtResource("1_t0220")
+region = Rect2(6, 0, 29, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjg5o"]
+atlas = ExtResource("1_t0220")
+region = Rect2(64, 0, 29, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owqym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6nd4")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff1ik")
+}],
+"loop": true,
+"name": &"BL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ofvp")
+}],
+"loop": true,
+"name": &"BR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tok4b")
+}],
+"loop": true,
+"name": &"L",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq6df")
+}],
+"loop": true,
+"name": &"R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h8tq")
+}],
+"loop": true,
+"name": &"U",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjrf3")
+}],
+"loop": true,
+"name": &"UL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjg5o")
+}],
+"loop": true,
+"name": &"UR",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4a7i"]
+size = Vector2(10, 7)
+
+[node name="Missile" type="Area2D"]
+script = ExtResource("1_1jqn2")
+
+[node name="MissileSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_owqym")
+animation = &"R"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_a4a7i")

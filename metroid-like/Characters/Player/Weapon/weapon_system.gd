@@ -17,17 +17,21 @@ enum WeaponID{
 }
 var WeaponType = ["Gun", "Missile", "Bomb"]
 var weaponIndex = WeaponID.Gun
+var AttackDelay = 0.2
+var attackCountdown = 0
 
 var direction = Vector2(1, 0)
 var missileQty = 0
 
 func _ready() -> void:
+	attackCountdown = 0
 	missileQty = 0
 	GlobalSignals.missile_change.connect(_missile_change)
 	GlobalSignals.missile_ui_update.emit(missileQty)
 	current_marker = current_arm.get_node("Marker2D")
 	
 func _process(delta: float) -> void:
+	attackCountdown = max(attackCountdown - delta, 0)
 	direction = Input.get_vector("left", "right", "up", "down")
 	direction = Vector2(sign(direction.x), sign(direction.y))
 	if not player_body.is_on_floor():
@@ -48,9 +52,14 @@ func fire() -> void:
 		WeaponID.Missile: "res://Characters/Player/Weapon/Missile.tscn"
 	}
 	
+	if attackCountdown > 0:
+		return
+	else:
+		attackCountdown = AttackDelay
+	
 	var bullet = load(weapons[weaponIndex]).instantiate()
 	var direction_x = 0 if current_arm == attack_up else player_body.previous_direction
-	bullet.fire(current_marker, 10*Vector2(direction_x, direction.y))
+	bullet.fire(self, current_marker, 10*Vector2(direction_x, direction.y))
 
 func switch() -> void:
 	weaponIndex = (weaponIndex + 1) % 2
