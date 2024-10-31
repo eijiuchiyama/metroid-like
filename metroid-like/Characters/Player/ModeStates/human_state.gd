@@ -1,7 +1,6 @@
 extends State 
 
-@export 
-var ball_state : State 
+@export var ball_state : State 
 
 func init_state() -> void: 
 	player_arm.show()

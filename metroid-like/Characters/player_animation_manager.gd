@@ -1,4 +1,5 @@
-class_name AnimationManager extends Node
+extends Node
+class_name AnimationManager
 
 @export var ball_sprite : AnimatedSprite2D
 @export var human_sprite : AnimatedSprite2D

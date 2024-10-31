@@ -1,4 +1,5 @@
-class_name Player extends CharacterBody2D
+extends CharacterBody2D
+class_name Player
 
 @onready var animation_manager = get_node("AnimationManager")
 @onready var player_arm = get_node("PlayerArm")
