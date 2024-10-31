@@ -50,6 +50,23 @@ animations = [{
 "texture": ExtResource("21_t71ax")
 }],
 "loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_1d5g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_msy5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7oys2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_t71ax")
+}],
+"loop": true,
 "name": &"walking",
 "speed": 5.0
 }]
