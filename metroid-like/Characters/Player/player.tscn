@@ -161,6 +161,6 @@ visible = false
 position = Vector2(1, -2)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gacwv")
-animation = &"idle"
+animation = &"walking"
 
 [node name="Camera2D" type="Camera2D" parent="."]
