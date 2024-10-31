@@ -17,6 +17,7 @@ um novo diagrama de classes atualizado para a versão final do projeto.**
 As imagens apresentadas no README estão armazenadas na pasta 'Estrutura do Jogo'
 
 ## Instruções de Instalação
+Para executar o jogo, basta instalar os arquivos contidos na pasta Game/ e executar o arquivo correspondente ao sistema operacional.
 
 ## Cronograma do projeto
 A entrega é dividida em múltiplas etapas:
@@ -37,7 +38,7 @@ Dividimos as ações a serem realizadas com base nas fases, e atribuímos cada f
 
 ### Fase 1
 
-Na fase 1, implementamos os padrões estado (state). Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
+Na fase 1, implementamos o padrão de estado (state) no nosso projeto. Também conseguimos criar assets para o player e para o mundo, porém alguns ainda não foram adicionados ao jogo. Conseguimos fazer o movimento básico, alternando as formas de movimentação do personagem, com o uso do padrão estado.
 
 #### Padrão de estados (State pattern)
 
@@ -65,7 +66,10 @@ Observação: Esse diagrama representa como o padrão foi implementado via scrip
 
 ### Fase 2
 
-Na fase 2, utilizando o padrão estratégia (strategy), implementamos a troca de armas. A máquina de estados, nesta fase, está mais completa que a anterior, tendo implementado a alternância entre as formas humana e bola. Começamos a criar os inimigos do jogo nesta fase, mas ainda não os havíamos adicionado nele.
+Na fase 2, utilizamos o padrão estratégia (strategy) para facilitar a troca de armas. A máquina de estados, nesta fase, está mais completa que a anterior, tendo implementado a alternância entre as formas humana e bola. Começamos a criar os inimigos do jogo nesta fase, mas ainda não os havíamos adicionado nele.
+
+#### Padrão de Estratégia (Strategy pattern)
+Como os diferentes armas possuem os mesmos métodos que podem ser acessadas pelas outras classes, foi aplicado o padrão de estratégia a fim de evitar o uso dos desvios condicionais para identificação do tipo de arma, com isso foi possível diminuir a repetição de código e consequentemente facilitar a sua leitura e entendimento.
 
 #### Atualizações no padrão de Estados (State Pattern)
 
@@ -75,8 +79,6 @@ O projeto é inspirado na série de jogos Metroid, em que a personagem principal
 alternar de formas: forma antropomórfica e forma de "bola". A primeira é a forma padrão e "humana", em que a personagem pode ficar parada, atirar, pular e andar. Na segunda forma, a personagem fica menor e pode acessar áreas estreitas, mas também pode ficar parada e andar. Com pequnas variações, pode também pular após o desbloqueio da habilidade de pulo para essa forma e lançar bombas (do ponto de vista de impementação, é um "tiro" que adota outra estratégia do padrão Estratégia).
 
 Repare que ambas as formas compartilham uma máquina de estados quase idêntica. Criar estados "bolaIdle", "bolaWalk", "bolaJump" seria extremamente redundante. A solução para incorporar essa mecânica de jogo com o padrão de estados foi a adoção de máquinas de estados concorrentes. Existem dois StateManager agora. O primeiro StateManger é o descrito na fase 1. O segundo StateManager é um gerenciador de estados que gerencia dois estados: os novos estados humana e bola. Esses estados, quando aplicados (ou seja, durante a execução do método init_state), definem os novos sprites de idle, walking, jumping do gerenciador de animações do personagem, a nova hitbox e (ainda não implementado, mas planejado para a entrega), a nova estratégia de tiro, de acordo com o novo estado.
-
-### Fase 3
 
 ## Integrantes do grupo e seus NUSP
 Atenágoras Silva - 5447262
