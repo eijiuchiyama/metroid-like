@@ -20,11 +20,11 @@ As imagens apresentadas no README estão armazenadas na pasta 'Estrutura do Jogo
 Para executar o jogo, basta instalar os arquivos contidos na pasta Game/ e executar o arquivo correspondente ao sistema operacional.
 
 Controles:
-    - W, A, S, D: Movimento da Personagem, Direção da Arma
-    - W, S: Transformação entre estado Humano e Bola
-    - Space: Pular
-    - Shift: Atirar
-    - Ctrl: Troca de Arma
+- W, A, S, D: Movimento da Personagem, Direção da Arma
+- W, S: Transformação entre estado Humano e Bola
+- Space: Pular
+- Shift: Atirar
+- Ctrl: Trocar a Arma
 
 ## Cronograma do projeto
 A entrega é dividida em múltiplas etapas:
