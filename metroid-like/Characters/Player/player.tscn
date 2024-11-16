@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=27 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -26,6 +26,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyn0x"]
+radius = 37.0135
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dg8vp"]
 animations = [{
 "frames": [{
@@ -41,13 +44,13 @@ animations = [{
 "texture": ExtResource("18_1d5g0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_msy5r")
+"texture": ExtResource("21_t71ax")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_7oys2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_t71ax")
+"texture": ExtResource("19_msy5r")
 }],
 "loop": true,
 "name": &"jump",
@@ -58,13 +61,13 @@ animations = [{
 "texture": ExtResource("18_1d5g0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_msy5r")
+"texture": ExtResource("21_t71ax")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_7oys2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_t71ax")
+"texture": ExtResource("19_msy5r")
 }],
 "loop": true,
 "name": &"walking",
@@ -122,9 +125,13 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a72ib")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShapeHuman" type="CollisionShape2D" parent="."]
 position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_03pdv")
+
+[node name="CollisionShapeBall" type="CollisionShape2D" parent="."]
+position = Vector2(2, 32)
+shape = SubResource("CircleShape2D_tyn0x")
 
 [node name="MovementStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("1_2brj2")
@@ -171,7 +178,7 @@ visible = false
 position = Vector2(0, 23)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dg8vp")
-animation = &"walking"
+animation = &"jump"
 
 [node name="HumanSprite" type="AnimatedSprite2D" parent="AnimationManager"]
 visible = false

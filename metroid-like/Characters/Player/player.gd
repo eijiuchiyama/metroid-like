@@ -3,6 +3,8 @@ class_name Player
 
 @onready var animation_manager = get_node("AnimationManager")
 @onready var player_arm = get_node("PlayerArm")
+@onready var collision_human = get_node("CollisionShapeHuman")
+@onready var collision_ball = get_node("CollisionShapeBall")
 
 const horizontal_speed : int = 500
 const jump_force : int = -500
