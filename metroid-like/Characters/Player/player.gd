@@ -5,7 +5,7 @@ class_name Player
 @onready var player_arm = get_node("PlayerArm")
 
 const horizontal_speed : int = 500
-const jump_force : int = -350
+const jump_force : int = -500
 const max_fall_speed: int = 1000
 const gravity: int = 980
 
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if self.velocity.x != 0:
 		previous_direction = sign(self.velocity.x)
 	
-	self.velocity.y = max(self.velocity.y + gravity * delta, max_fall_speed) if not is_on_floor() else 0
+	self.velocity.y = min(self.velocity.y + gravity * delta, max_fall_speed) if not is_on_floor() else 0
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		self.velocity.y = jump_force
