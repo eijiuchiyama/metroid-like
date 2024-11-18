@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0pnyykcyv4q1"]
+
+[ext_resource type="Texture2D" uid="uid://c4gjw6odjesxq" path="res://assets/Spritesplayer/portal1.png" id="1_jcnom"]
+[ext_resource type="Texture2D" uid="uid://jdqap3ynniey" path="res://assets/Spritesplayer/portal2.png" id="2_qxjso"]
+[ext_resource type="Texture2D" uid="uid://smo0iytcl3ei" path="res://assets/Spritesplayer/portal3.png" id="3_8pw54"]
+[ext_resource type="Texture2D" uid="uid://lonsbc5t3pmj" path="res://assets/Spritesplayer/portal4.png" id="4_30mmw"]
+[ext_resource type="Texture2D" uid="uid://cxavd0e5847n1" path="res://assets/Spritesplayer/portal5.png" id="5_s38db"]
+[ext_resource type="Texture2D" uid="uid://df8ht3p2diygy" path="res://assets/Spritesplayer/portal6.png" id="6_bubgn"]
+[ext_resource type="Texture2D" uid="uid://dy3b5tqgs41py" path="res://assets/Spritesplayer/portal7.png" id="7_snekq"]
+[ext_resource type="Texture2D" uid="uid://24j7iom104i3" path="res://assets/Spritesplayer/portal8.png" id="8_74kib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccfpk"]
+size = Vector2(48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5d7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jcnom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qxjso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8pw54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30mmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s38db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bubgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_snekq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_74kib")
+}],
+"loop": true,
+"name": &"abre",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jcnom")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Portal" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ccfpk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w5d7t")
