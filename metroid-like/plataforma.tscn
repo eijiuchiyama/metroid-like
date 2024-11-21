@@ -12,6 +12,7 @@ physics_material_override = SubResource("PhysicsMaterial_7xckh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_273t4")
+one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

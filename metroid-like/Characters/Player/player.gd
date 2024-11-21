@@ -7,7 +7,7 @@ class_name Player
 @onready var collision_ball = get_node("CollisionShapeBall")
 
 const horizontal_speed : int = 500
-const jump_force : int = -500
+const jump_force : int = -600
 const max_fall_speed: int = 1000
 const gravity: int = 980
 

@@ -1,0 +1,197 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmbggbm8ehdh6"]
+
+[ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://plataforma.tscn" id="1_xegah"]
+
+[node name="Plataformas" type="Node2D"]
+
+[node name="Plataforma" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2609, 564)
+scale = Vector2(2, 2)
+
+[node name="Plataforma2" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2211, 661)
+scale = Vector2(2, 2)
+
+[node name="Plataforma3" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2954, 463)
+scale = Vector2(2, 2)
+
+[node name="Plataforma4" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(3236, 310)
+scale = Vector2(2, 2)
+
+[node name="Plataforma5" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2960, 136)
+scale = Vector2(2, 2)
+
+[node name="Plataforma6" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2626, -28)
+scale = Vector2(2, 2)
+
+[node name="Plataforma7" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2950, -197)
+scale = Vector2(2, 2)
+
+[node name="Plataforma8" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2223, 109)
+scale = Vector2(2, 2)
+
+[node name="Plataforma9" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2967, 910)
+scale = Vector2(2, 2)
+
+[node name="Plataforma10" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(3226, -350)
+scale = Vector2(2, 2)
+
+[node name="Plataforma11" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2956, -519)
+scale = Vector2(2, 2)
+
+[node name="Plataforma12" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2626, -28)
+scale = Vector2(2, 2)
+
+[node name="Plataforma13" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2648, -670)
+scale = Vector2(2, 2)
+
+[node name="Plataforma14" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2261, -479)
+scale = Vector2(2, 2)
+
+[node name="Plataforma15" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2907, -859)
+scale = Vector2(2, 2)
+
+[node name="Plataforma16" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2414, 1037)
+scale = Vector2(2, 2)
+
+[node name="Plataforma17" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(3243, 643)
+scale = Vector2(2, 2)
+
+[node name="Plataforma18" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2626, -28)
+scale = Vector2(2, 2)
+
+[node name="Plataforma19" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(433, -718)
+scale = Vector2(2, 2)
+
+[node name="Plataforma20" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(788, -840)
+scale = Vector2(2, 2)
+
+[node name="Plataforma21" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4367, 704)
+scale = Vector2(2, 2)
+
+[node name="Plataforma22" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4644, 903)
+scale = Vector2(2, 2)
+
+[node name="Plataforma23" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5030, 694)
+scale = Vector2(2, 2)
+
+[node name="Plataforma24" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4369, 1083)
+scale = Vector2(2, 2)
+
+[node name="Plataforma25" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(9162, 463)
+scale = Vector2(2, 2)
+
+[node name="Plataforma26" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(9162, 710)
+scale = Vector2(2, 2)
+
+[node name="Plataforma27" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(11240, 2147)
+scale = Vector2(2, 2)
+
+[node name="Plataforma28" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(11246, 2403)
+scale = Vector2(2, 2)
+
+[node name="Plataforma29" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(11245, 2663)
+scale = Vector2(2, 2)
+
+[node name="Plataforma30" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(2626, -28)
+scale = Vector2(2, 2)
+
+[node name="Plataforma31" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4671, 1345)
+scale = Vector2(2, 2)
+
+[node name="Plataforma32" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4392, 1534)
+scale = Vector2(2, 2)
+
+[node name="Plataforma33" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4981, 1545)
+scale = Vector2(2, 2)
+
+[node name="Plataforma34" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5383, 1148)
+scale = Vector2(2, 2)
+
+[node name="Plataforma35" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5360, 514)
+scale = Vector2(2, 2)
+
+[node name="Plataforma36" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5029, 340)
+scale = Vector2(2, 2)
+
+[node name="Plataforma37" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4682, 187)
+scale = Vector2(2, 2)
+
+[node name="Plataforma38" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4378, 61)
+scale = Vector2(2, 2)
+
+[node name="Plataforma39" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4394, 2063)
+scale = Vector2(2, 2)
+
+[node name="Plataforma40" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4797, 2049)
+scale = Vector2(2, 2)
+
+[node name="Plataforma41" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4621, 1773)
+scale = Vector2(2, 2)
+
+[node name="Plataforma42" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(11246, 3047)
+scale = Vector2(2, 2)
+
+[node name="Plataforma43" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5358, 2150)
+scale = Vector2(2, 2)
+
+[node name="Plataforma44" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5211, 2698)
+scale = Vector2(2, 2)
+
+[node name="Plataforma45" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4875, 2508)
+scale = Vector2(2, 2)
+
+[node name="Plataforma46" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(4608, 2308)
+scale = Vector2(2, 2)
+
+[node name="Plataforma47" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(5030, 694)
+scale = Vector2(2, 2)
+
+[node name="Plataforma48" parent="." instance=ExtResource("1_xegah")]
+position = Vector2(9457, 184)
+scale = Vector2(2, 2)
