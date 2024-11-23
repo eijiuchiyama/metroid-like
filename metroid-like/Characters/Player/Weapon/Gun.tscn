@@ -105,7 +105,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gl85"]
 size = Vector2(7, 7)
 
-[node name="Gun" type="Area2D"]
+[node name="Gun" type="CharacterBody2D"]
 script = ExtResource("1_n7gg8")
 
 [node name="GunSprite" type="AnimatedSprite2D" parent="."]

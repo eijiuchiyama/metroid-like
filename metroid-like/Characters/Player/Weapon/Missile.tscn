@@ -105,7 +105,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4a7i"]
 size = Vector2(10, 7)
 
-[node name="Missile" type="Area2D"]
+[node name="Missile" type="CharacterBody2D"]
 script = ExtResource("1_1jqn2")
 
 [node name="MissileSprite" type="AnimatedSprite2D" parent="."]

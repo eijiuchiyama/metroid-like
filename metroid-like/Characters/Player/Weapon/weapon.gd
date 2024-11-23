@@ -1,6 +1,9 @@
-class_name Weapon extends Area2D
+extends CharacterBody2D
+class_name Weapon
 
 var direction = Vector2(0, 0)
+var damage = 10
+var speed = 100
 
 func fire(manager: Node, marker: Node, dir: Vector2) -> void:
 	global_position = marker.global_position
@@ -9,5 +12,5 @@ func fire(manager: Node, marker: Node, dir: Vector2) -> void:
 	manager.get_tree().root.add_child(self)
 
 func _process(delta: float) -> void:
-	global_position += 3 * direction
-	pass
+	velocity = direction * speed
+	move_and_slide()

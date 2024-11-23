@@ -634,7 +634,8 @@ position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
 [node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_g0mjl")]
-position = Vector2(805, 192)
+position = Vector2(820, 412)
+scale = Vector2(2, 2)
 
 [node name="Itens" type="Node2D" parent="."]
 
