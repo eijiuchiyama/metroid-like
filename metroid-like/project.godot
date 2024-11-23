@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalVariables="*res://Global/global_variables.gd"
 GlobalSignals="*res://Global/global_signals.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/texture_fonts/plugin.cfg")
