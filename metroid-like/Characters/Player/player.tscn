@@ -127,10 +127,12 @@ animations = [{
 script = ExtResource("1_a72ib")
 
 [node name="CollisionShapeHuman" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_03pdv")
 
 [node name="CollisionShapeBall" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2, 32)
 shape = SubResource("CircleShape2D_tyn0x")
 

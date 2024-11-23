@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		var knock_dir = (body.position - position).normalized()
+		body.take_damage(knock_dir)
 		GlobalSignals.hp_change.emit(-1 * collision_damage)
 
 func death():
