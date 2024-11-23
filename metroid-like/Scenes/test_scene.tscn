@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dksv8feabhd4u"]
+[gd_scene load_steps=13 format=4 uid="uid://dksv8feabhd4u"]
 
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="1_1pp56"]
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="2_3oa4h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://plataforma.tscn" id="5_qhesv"]
 [ext_resource type="PackedScene" uid="uid://dmbggbm8ehdh6" path="res://plataformas.tscn" id="6_aa1wu"]
 [ext_resource type="PackedScene" uid="uid://b0pnyykcyv4q1" path="res://portal.tscn" id="6_qfkmb"]
+[ext_resource type="PackedScene" uid="uid://cwuomcfkrils8" path="res://Item/LifeDrop.tscn" id="9_suy00"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7xa4"]
 
@@ -645,5 +646,9 @@ scale = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_1pp56")]
 position = Vector2(502, 315)
+
+[node name="LifeDrop" parent="." instance=ExtResource("9_suy00")]
+position = Vector2(653, 493)
+scale = Vector2(3, 3)
 
 [editable path="Plataformas"]

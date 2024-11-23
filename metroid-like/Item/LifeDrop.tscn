@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwuomcfkrils8"]
+[gd_scene load_steps=15 format=3 uid="uid://cwuomcfkrils8"]
 
+[ext_resource type="Script" path="res://Item/life_drop.gd" id="1_wyb1x"]
 [ext_resource type="Texture2D" uid="uid://bg0hjsjqlb663" path="res://assets/testAsset/Super Metroid - Object.png" id="2_i1nvf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_804m6"]
@@ -89,6 +90,7 @@ animations = [{
 radius = 4.0
 
 [node name="LifeDrop" type="Node2D"]
+script = ExtResource("1_wyb1x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lrd5s")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=28 format=3 uid="uid://c4585x0lkhthk"]
 
 [ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ctaflftdagnnm" path="res://assets/Spritesplayer/ball2.png" id="19_msy5r"]
 [ext_resource type="Texture2D" uid="uid://bt08vx87lcjq8" path="res://assets/Spritesplayer/ball3.png" id="20_7oys2"]
 [ext_resource type="Texture2D" uid="uid://bywvpu3dhgnox" path="res://assets/Spritesplayer/ball4.png" id="21_t71ax"]
+[ext_resource type="Script" path="res://Life/autoCure.gd" id="23_iqg5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
@@ -188,3 +189,7 @@ sprite_frames = SubResource("SpriteFrames_gacwv")
 animation = &"walking"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LifeComponent" type="Node" parent="."]
+script = ExtResource("23_iqg5c")
+hp = 70
