@@ -7,3 +7,4 @@ func fire(manager: Node, marker: Node, dir: Vector2) -> void:
 		scale = Vector2(2, 2)
 		direction = dir
 		manager.get_tree().root.add_child(self)
+		rotation = direction.angle()

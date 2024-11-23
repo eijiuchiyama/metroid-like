@@ -10,7 +10,16 @@ func fire(manager: Node, marker: Node, dir: Vector2) -> void:
 	scale = Vector2(2, 2)
 	direction = dir
 	manager.get_tree().root.add_child(self)
-
+	rotation = direction.angle()
+	
 func _process(delta: float) -> void:
 	velocity = direction * speed
 	move_and_slide()
+	
+func _bullet_hit(body: Node2D) -> void:
+	if body is Enemy:
+		body.life.subHp(damage)
+		if body.life.hp == 0:
+			body.death()
+	if body is not Player:
+		queue_free()
