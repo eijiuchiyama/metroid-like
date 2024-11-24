@@ -2,6 +2,8 @@ extends Item
 
 var hp_recovery:int = 10
 
+signal recover_hp(valor)
+
 func _ready() -> void:
 	if randi_range(0, 1) == 0:
 		$AnimatedSprite2D.play("big")
@@ -9,6 +11,10 @@ func _ready() -> void:
 	else:
 		$AnimatedSprite2D.play("small")
 		hp_recovery = 10
+		
+func _on_area_2d_body_entered(body):
+	emit_signal("recover_hp", hp_recovery)
+	self.queue_free()
 
 func collected() -> void:
 	GlobalSignals.hp_change.emit(hp_recovery)
