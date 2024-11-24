@@ -3,7 +3,7 @@ extends Node
 
 var body: Node
 @onready var sprite = get_parent().get_node("Sprite")
-@onready var plataform_detector = get_parent().get_node("Detector")
+@onready var plataform_detector = get_parent().get_node("Plataform_Detector")
 
 const max_fall_speed: int = 1000
 const gravity: int = 980

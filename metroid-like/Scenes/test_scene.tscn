@@ -634,7 +634,7 @@ position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
 [node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_g0mjl")]
-position = Vector2(897, 250)
+position = Vector2(857, 505)
 scale = Vector2(2, 2)
 
 [node name="Itens" type="Node2D" parent="."]
@@ -646,7 +646,7 @@ position = Vector2(297, 492)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_1pp56")]
-position = Vector2(770, 484)
+position = Vector2(1462, 501)
 
 [node name="LifeDrop" parent="." instance=ExtResource("9_suy00")]
 position = Vector2(653, 493)

@@ -8,10 +8,13 @@ class_name Enemy
 @onready var Sprite = $Sprite
 @export var collision_damage: int
 
+var in_attack: bool = false
+
 func _process(delta: float) -> void:
 	if life.hp > 0:
-		movement.move(delta)
-		attack.tryAttack()
+		if not in_attack:
+			movement.move(delta)
+		attack.tryAttack(delta)
 	else:
 		death()
 
