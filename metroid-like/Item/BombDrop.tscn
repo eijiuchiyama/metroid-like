@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://vl68fer70a8c"]
+
+[node name="BombDrop" type="Node2D"]
