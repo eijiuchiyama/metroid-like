@@ -2,6 +2,7 @@ extends Node
 # This movement makes the enemy walk on the platform periodically without falling off
 
 var body: Node
+@onready var sprite = get_parent().get_node("Sprite")
 @onready var plataform_detector = get_parent().get_node("Detector")
 
 const max_fall_speed: int = 1000
@@ -16,12 +17,17 @@ func _enter_tree() -> void:
 	body = get_parent()
 
 func move(delta: float) -> void:
-	body.velocity.y = min(body.velocity.y + gravity * delta, max_fall_speed) if not body.is_on_floor() else 0
 	change_countdown = max(change_countdown - delta, 0)
 	if change_countdown == 0:
 		check_direction()
 	
-	body.velocity.x = velocity * direction
+	if body.is_on_floor():
+		sprite.play("walk")
+		body.velocity = Vector2(velocity * direction, 0)
+	else:
+		sprite.play("idle")
+		body.velocity = Vector2(0, min(body.velocity.y + gravity * delta, max_fall_speed))
+	
 	body.move_and_slide()
 
 func check_direction():

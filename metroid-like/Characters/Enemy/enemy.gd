@@ -5,11 +5,15 @@ class_name Enemy
 @onready var attack = $Attack
 @onready var hitBox = $HitArea
 @onready var life = $Life
+@onready var Sprite = $Sprite
 @export var collision_damage: int
 
 func _process(delta: float) -> void:
-	movement.move(delta)
-	attack.tryAttack()
+	if life.hp > 0:
+		movement.move(delta)
+		attack.tryAttack()
+	else:
+		death()
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -18,5 +22,9 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		GlobalSignals.hp_change.emit(-1 * collision_damage)
 
 func death():
-	print("Dead")
-	queue_free()
+	Sprite.scale = Vector2(2, 2)
+	Sprite.play("death")
+
+func _on_sprite_animation_finished() -> void:
+	if Sprite.animation == "death":
+		queue_free()

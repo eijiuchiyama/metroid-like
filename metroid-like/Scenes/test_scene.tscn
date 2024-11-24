@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="2_3oa4h"]
 [ext_resource type="PackedScene" uid="uid://b5b3ly41fv73f" path="res://Item/MissileDrop.tscn" id="3_ep8fg"]
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="4_6ys8m"]
-[ext_resource type="PackedScene" uid="uid://cvg2r1iq7uu6a" path="res://Characters/Enemy/EnemyScene/test_enemy.tscn" id="5_g0mjl"]
+[ext_resource type="PackedScene" uid="uid://cvg2r1iq7uu6a" path="res://Characters/Enemy/EnemyScene/Lighter.tscn" id="5_g0mjl"]
 [ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://plataforma.tscn" id="5_qhesv"]
 [ext_resource type="PackedScene" uid="uid://dmbggbm8ehdh6" path="res://plataformas.tscn" id="6_aa1wu"]
 [ext_resource type="PackedScene" uid="uid://b0pnyykcyv4q1" path="res://portal.tscn" id="6_qfkmb"]
@@ -634,7 +634,7 @@ position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
 [node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_g0mjl")]
-position = Vector2(1778, 468)
+position = Vector2(897, 250)
 scale = Vector2(2, 2)
 
 [node name="Itens" type="Node2D" parent="."]
@@ -646,7 +646,7 @@ position = Vector2(297, 492)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_1pp56")]
-position = Vector2(1679, 451)
+position = Vector2(770, 484)
 
 [node name="LifeDrop" parent="." instance=ExtResource("9_suy00")]
 position = Vector2(653, 493)

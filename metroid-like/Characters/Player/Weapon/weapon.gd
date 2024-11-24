@@ -19,7 +19,5 @@ func _process(delta: float) -> void:
 func _bullet_hit(body: Node2D) -> void:
 	if body is Enemy:
 		body.life.subHp(damage)
-		if body.life.hp == 0:
-			body.death()
 	if body is not Player:
 		queue_free()
