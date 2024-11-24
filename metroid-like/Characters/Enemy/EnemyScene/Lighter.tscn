@@ -90,6 +90,7 @@ size = Vector2(34, 45)
 radius = 26.0
 
 [node name="Lighter" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_q7y5i")
 collision_damage = 10
 

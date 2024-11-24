@@ -8,7 +8,7 @@ class_name Player
 @onready var life = get_node("LifeComponent")
 
 const horizontal_speed : int = 500
-const jump_force : int = -600
+const jump_force : int = -900
 const max_fall_speed: int = 1000
 const gravity: int = 980
 
