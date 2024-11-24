@@ -1,0 +1,84 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvg2r1iq7uu6a"]
+
+[ext_resource type="Script" path="res://Characters/Enemy/enemy.gd" id="1_q7y5i"]
+[ext_resource type="Script" path="res://Characters/Enemy/Attack/no_attack.gd" id="2_ml7tr"]
+[ext_resource type="Script" path="res://Characters/Enemy/Movement/platform_walk.gd" id="3_ki2u4"]
+[ext_resource type="Script" path="res://Life/life.gd" id="4_est3j"]
+[ext_resource type="Texture2D" uid="uid://d2qi37j1jedfk" path="res://assets/Spritesenemy/enemy1-1.png" id="5_285oy"]
+[ext_resource type="Texture2D" uid="uid://bcy47nj7u8nq6" path="res://assets/Spritesenemy/enemy1-2.png" id="6_ws0ng"]
+[ext_resource type="Texture2D" uid="uid://c4e4nwtyn1p4v" path="res://assets/Spritesenemy/enemy1-3.png" id="7_xg58n"]
+[ext_resource type="Texture2D" uid="uid://ckqj403wbr220" path="res://assets/Spritesenemy/enemy1-4.png" id="8_oxvsj"]
+[ext_resource type="Texture2D" uid="uid://dqlva2dnthwh2" path="res://assets/Spritesenemy/enemy1-5.png" id="9_2yqcf"]
+[ext_resource type="Texture2D" uid="uid://x7n7xxf1xm3w" path="res://assets/Spritesenemy/enemy1-6.png" id="10_mfvpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or8e8"]
+atlas = ExtResource("5_285oy")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dflo3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or8e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ws0ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xg58n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oxvsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2yqcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mfvpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5woh"]
+size = Vector2(34, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lf71n"]
+radius = 26.0
+
+[node name="Lighter" type="CharacterBody2D"]
+script = ExtResource("1_q7y5i")
+collision_damage = 10
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("2_ml7tr")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("3_ki2u4")
+
+[node name="Life" type="Node" parent="."]
+script = ExtResource("4_est3j")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_dflo3")
+frame = 4
+frame_progress = 0.39242
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -2.5)
+shape = SubResource("RectangleShape2D_i5woh")
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="HitBox" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(-3, -2)
+shape = SubResource("CircleShape2D_lf71n")
+debug_color = Color(0.976029, 0, 0.414963, 0.42)
+
+[node name="Detector" type="RayCast2D" parent="."]
+position = Vector2(13, 0)
+target_position = Vector2(0, 24)
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
