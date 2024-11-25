@@ -639,7 +639,7 @@ position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
 [node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_g0mjl")]
-position = Vector2(858, 522)
+position = Vector2(840, 322)
 scale = Vector2(2, 2)
 
 [node name="Itens" type="Node2D" parent="."]

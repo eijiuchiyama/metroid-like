@@ -26,7 +26,7 @@ func move(delta: float) -> void:
 		body.velocity = Vector2(velocity * direction, 0)
 	else:
 		sprite.play("idle")
-		body.velocity = Vector2(0, min(body.velocity.y + gravity * delta, max_fall_speed))
+		fall(delta)
 	
 	body.move_and_slide()
 
@@ -39,3 +39,6 @@ func change_direction():
 	body.rotation = (body.rotation + PI)
 	body.scale.y *= -1
 	direction *= -1
+
+func fall(delta):
+	body.velocity = Vector2(0, min(body.velocity.y + gravity * delta, max_fall_speed))

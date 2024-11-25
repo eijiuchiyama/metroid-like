@@ -7,6 +7,9 @@ var body: Node
 @export var speed: int = 300
 var move_timer : Timer
 
+@export var sight_range: int = 500
+@onready var player = get_tree().get_nodes_in_group("player")[0]
+
 func _enter_tree() -> void:
 	body = get_parent()
 	origin = body.global_position
@@ -19,6 +22,16 @@ func _ready():
 	set_movement()
 
 func move(delta: float) -> void:
+	if player_in_range():
+		if (player.global_position - body.global_position).x > 0:
+			change_direction(0)
+		else:
+			change_direction(1)
+	else:
+		if body.velocity.x > 0:
+			change_direction(0)
+		elif body.velocity.x < 0:
+			change_direction(1)
 	body.move_and_slide()
 
 func set_movement():
@@ -30,6 +43,22 @@ func set_movement():
 	
 	move_timer.wait_time = randf_range(0.1, 0.2)
 	move_timer.start()
+
+func fall(delta):
+	pass
+
+func player_in_range() -> bool:
+	var current_position = body.global_position
+	var dist_to_player = current_position.distance_to(player.global_position)
+	
+	if dist_to_player < sight_range:
+		return true
+	
+	return false
+
+func change_direction(is_left):
+	body.rotation = is_left * PI
+	body.scale.y = -1 * abs(body.scale.y) if is_left else abs(body.scale.y)
 
 func _on_move_timer_timeout():
 	# Reset velocity to zero and wait for random time for next movement
