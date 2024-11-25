@@ -8,6 +8,7 @@ extends State
 func init_state() -> void:
 	player_arm.hide()
 	animation_manager.toggle_sprite("ball")
+	
 	collision_human.disabled = true
 	collision_ball.disabled = false
 	

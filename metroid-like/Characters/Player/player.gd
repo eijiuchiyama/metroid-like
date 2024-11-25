@@ -7,6 +7,8 @@ class_name Player
 @onready var collision_ball = get_node("CollisionShapeBall")
 @onready var life = get_node("LifeComponent")
 
+@export var ui : CanvasLayer
+
 const horizontal_speed : int = 500
 const jump_force : int = -900
 const max_fall_speed: int = 1000
@@ -16,6 +18,7 @@ var previous_direction : int = 1
 var is_damaged = false
 	
 func _process(delta: float) -> void:
+	print(life.getHp())
 	if not is_damaged:
 		var input_direction = Input.get_vector("left", "right", "up", "down")
 		self.velocity.x = input_direction.x * horizontal_speed

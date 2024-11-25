@@ -17,3 +17,15 @@ func _missile_ui_update(value) -> void:
 
 func _hp_ui_update(value) -> void:
 	$EnergyLabel/Energy.text = str(value).pad_zeros(3)
+
+func toggle_icon(icon):
+	$Bullet.modulate = Color.WHITE
+	$Bomb.modulate = Color.WHITE
+	$Missile.modulate = Color.WHITE
+	match icon:
+		"Missile":
+			$Missile.modulate = Color.GREEN
+		"Bullet":
+			$Bullet.modulate = Color.GREEN
+		"Bomb":
+			$Bomb.modulate = Color.GREEN

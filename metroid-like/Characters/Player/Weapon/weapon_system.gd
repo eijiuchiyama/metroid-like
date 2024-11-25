@@ -9,6 +9,7 @@ extends Node
 @onready var player_body = get_parent()
 
 @export var current_arm = attack_front_arm
+@onready var ui : CanvasLayer = get_parent().ui
 
 var current_marker
 
@@ -63,6 +64,7 @@ func fire() -> void:
 
 func switch() -> void:
 	weaponIndex = (weaponIndex + 1) % 2
+	ui.toggle_icon(WeaponType[weaponIndex])
 
 func _missile_change(value) -> void:
 	missileQty = max(missileQty + value, 0)

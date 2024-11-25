@@ -70,3 +70,5 @@ offset_bottom = 26.0
 text = "005"
 label_settings = SubResource("LabelSettings_w3m1n")
 horizontal_alignment = 1
+
+[node name="Bullet" type="Sprite2D" parent="."]

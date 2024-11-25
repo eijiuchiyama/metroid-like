@@ -782,7 +782,8 @@ scale = Vector2(3, 3)
 
 [node name="SceneUi" parent="." instance=ExtResource("13_sgc1o")]
 
-[node name="Player" parent="." instance=ExtResource("14_u4egx")]
+[node name="Player" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("14_u4egx")]
 position = Vector2(1350, 487)
+ui = NodePath("../SceneUi")
 
 [editable path="Plataformas"]
