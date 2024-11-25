@@ -18,5 +18,7 @@ func addHp(n) -> void:
 	hp = min(hp + n, hpMax)
 func subHp(n) -> void:
 	hp = max(hp - n, 0)
+	if hp == 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over_scene.tscn")
 func special() -> void: # Seria uma função virtual em C++ a ser implementada na subclasse que herdar Life (associada ao tipo de personagem que tem a vida
 	pass # Se a subclasse não tiver um polimorfismo para esta função, a função apenas não faz nada
