@@ -864,4 +864,7 @@ position = Vector2(949, 503)
 [node name="BombDrop2" parent="." instance=ExtResource("7_g25oi")]
 position = Vector2(1015, 504)
 
+[node name="BreakableWall" parent="." instance=ExtResource("13_kcg7t")]
+position = Vector2(584, 544)
+
 [editable path="Plataformas"]
