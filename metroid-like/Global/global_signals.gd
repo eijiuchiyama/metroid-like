@@ -14,3 +14,5 @@ signal ball_unlock()
 signal missile_unlock()
 
 signal mutation_change(value)
+
+signal hit_by_explosion()
