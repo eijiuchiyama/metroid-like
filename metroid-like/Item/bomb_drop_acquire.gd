@@ -1,4 +1,5 @@
 extends Item
 
 func collected() -> void:
-	GlobalSignals.can_use_bomb.emit(true)
+	GlobalVariables.BombUnlocked = true
+	GlobalSignals.bomb_unlock.emit()

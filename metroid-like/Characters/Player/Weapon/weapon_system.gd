@@ -91,13 +91,15 @@ func switch_weapon() -> void:
 	ui.toggle_icon(WeaponType[weaponIndex])
 
 func _missile_change(value) -> void:
-	missileQty = max(missileQty + value, 0)
-	GlobalSignals.missile_ui_update.emit(missileQty)
+	if GlobalVariables.MissileUnlocked:
+		missileQty = max(missileQty + value, 0)
+		GlobalSignals.missile_ui_update.emit(missileQty)
 	
 func _bomb_change(value) -> void:
-	bombQty = max(bombQty + value, 0)
-	print(value)
-	GlobalSignals.bomb_ui_update.emit(bombQty)
+	if GlobalVariables.BombUnlocked:
+		bombQty = max(bombQty + value, 0)
+		print(value)
+		GlobalSignals.bomb_ui_update.emit(bombQty)
 	
 func select_arm(arm : Sprite2D):
 	current_arm.hide()
