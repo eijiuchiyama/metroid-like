@@ -12,5 +12,5 @@ func init_state() -> void:
 	collision_ball.disabled = true
 	
 func update_state() -> void:
-	if Input.is_action_just_pressed("down") and not (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+	if Input.is_action_just_pressed("down") and not (Input.is_action_pressed("left") or Input.is_action_pressed("right")) and GlobalVariables.MorphBallUnlocked:
 		state_manager.switch_state(ball_state)
