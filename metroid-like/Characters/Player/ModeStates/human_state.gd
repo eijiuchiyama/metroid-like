@@ -5,8 +5,9 @@ extends State
 @onready var collision_ball = get_parent().get_parent().get_node("CollisionShapeBall")
 
 func init_state() -> void: 
-	player_arm.show()
 	animation_manager.toggle_sprite("human")
+	player_arm.show()
+	player_arm.switch_weapon()
 	collision_human.disabled = false
 	collision_ball.disabled = true
 	

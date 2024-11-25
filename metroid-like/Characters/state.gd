@@ -21,4 +21,4 @@ func _process(delta: float) -> void:
 		player_arm.fire()
 		
 	if Input.is_action_just_pressed("switch_key"):
-		player_arm.switch()
+		player_arm.switch_weapon()

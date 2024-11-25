@@ -16,7 +16,7 @@ const gravity: int = 980
 
 var previous_direction : int = 1
 var is_damaged = false
-	
+
 func _process(delta: float) -> void:
 	if not is_damaged:
 		var input_direction = Input.get_vector("left", "right", "up", "down")

@@ -6,17 +6,19 @@ extends Node
 @onready var jump_arm = get_node("Jump")
 @onready var attack_up = get_node("AttackUp")
 
-@onready var player_body = get_parent()
+var player_body = get_parent()
 
 @export var current_arm = attack_front_arm
 @onready var ui : CanvasLayer = get_parent().ui
 
 var current_marker
 
+var ignore_first_switch_call: bool = true
+
 enum WeaponID{
-	Gun, Missile, Bomb
+	Gun, Missile, Bomb, Null
 }
-var WeaponType = ["Gun", "Missile", "Bomb"]
+var WeaponType = ["Gun", "Missile", "Bomb", "Null"]
 var weaponIndex = WeaponID.Gun
 var AttackDelay = 0.2
 var attackCountdown = 0
@@ -24,6 +26,9 @@ var attackCountdown = 0
 var direction = Vector2(1, 0)
 var missileQty = 0
 var bombQty = 0
+
+func _enter_tree() -> void:
+	player_body = get_parent()
 
 func _ready() -> void:
 	attackCountdown = 0
@@ -64,12 +69,26 @@ func fire() -> void:
 	var direction_x = 0 if current_arm == attack_up else player_body.previous_direction
 	bullet.fire(self, current_marker, 10*Vector2(direction_x, direction.y))
 
-func switch() -> void:
+func switch_weapon() -> void:
+	if ignore_first_switch_call:
+		# When init HumanState at begining of game it calls tis method, who
+		# access the method is_human(), but at this point, AnimationManager
+		# Was not been load yet, so the game crashes - Technical Debt
+		ignore_first_switch_call = false
+		return
 	if player_body.is_human():
-		weaponIndex = (weaponIndex + 1) % 2
+		if weaponIndex > 1: # Return to Gun if change state from Morph to Human
+			weaponIndex = WeaponID.Gun
+		elif GlobalVariables.MissileUnlocked:
+			weaponIndex = (weaponIndex + 1) % 2
+		else:
+			weaponIndex = WeaponID.Gun
 	else:
-		weaponIndex = 2
-	ui.toggle_icon(WeaponType[weaponIndex])	
+		if GlobalVariables.BombUnlocked:
+			weaponIndex = WeaponID.Bomb
+		else:
+			weaponIndex = WeaponID.Null
+	ui.toggle_icon(WeaponType[weaponIndex])
 
 func _missile_change(value) -> void:
 	missileQty = max(missileQty + value, 0)

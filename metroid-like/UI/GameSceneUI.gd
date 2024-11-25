@@ -29,3 +29,5 @@ func toggle_icon(icon):
 			$Bullet.modulate = Color.GREEN
 		"Bomb":
 			$Bomb.modulate = Color.GREEN
+		"Null":
+			pass
