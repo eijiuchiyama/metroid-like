@@ -16,20 +16,25 @@ shader_parameter/color2 = Vector4(1, 0, 1, 1)
 material = SubResource("ShaderMaterial_el6wb")
 offset_right = 1153.0
 offset_bottom = 651.0
-color = Color(0.89, 0.4895, 0, 1)
+color = Color(0.429314, 0.000390774, 0.502542, 1)
 
 [node name="Mutandroid-logo" type="Sprite2D" parent="."]
 position = Vector2(581, 200)
 texture = ExtResource("1_uxjy7")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1.0
+offset_left = -1.0
 offset_top = 402.0
-offset_right = 1152.0
+offset_right = 1154.0
 offset_bottom = 469.0
 text = "START"
 script = ExtResource("3_txam3")
 
-[node name="Sprite2D" type="Sprite2D" parent="Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 5.0
+offset_top = 617.0
+offset_right = 625.0
+offset_bottom = 644.0
+text = "Atenágoras Silva - Fernando Yang - Lucas Uchiyama - Marcelo Spessoto - 2024"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

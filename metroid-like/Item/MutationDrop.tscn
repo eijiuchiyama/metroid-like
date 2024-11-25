@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqpsjm20j4hxq"]
+[gd_scene load_steps=13 format=3 uid="uid://dqpsjm20j4hxq"]
 
+[ext_resource type="Script" path="res://Item/mutation_drop.gd" id="1_jsd5g"]
 [ext_resource type="Texture2D" uid="uid://bokfsatdn5e46" path="res://assets/Items/spritesheet_mutation.png" id="1_tle5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xgnw"]
@@ -70,6 +71,7 @@ animations = [{
 size = Vector2(11, 21)
 
 [node name="MutationDrop" type="Node2D"]
+script = ExtResource("1_jsd5g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vf0dh")

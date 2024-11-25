@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxblbq7cgt667"]
+[gd_scene load_steps=9 format=3 uid="uid://cxblbq7cgt667"]
 
 [ext_resource type="Texture2D" uid="uid://cmtd4c85r61ch" path="res://assets/Items/spritesheet_bomb_get.png" id="1_ap4wf"]
+[ext_resource type="Script" path="res://Item/bomb_drop_acquire.gd" id="1_v6fis"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1d3c"]
 atlas = ExtResource("1_ap4wf")
@@ -54,6 +55,7 @@ animations = [{
 size = Vector2(19, 29)
 
 [node name="BombDropAdquire" type="Node2D"]
+script = ExtResource("1_v6fis")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qyc74")

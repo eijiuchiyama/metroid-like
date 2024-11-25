@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://vl68fer70a8c"]
+[gd_scene load_steps=7 format=3 uid="uid://vl68fer70a8c"]
 
+[ext_resource type="Script" path="res://Item/bomb_drop.gd" id="1_ibcdw"]
 [ext_resource type="Texture2D" uid="uid://ukti0wkmd1w0" path="res://assets/Items/spritesheet_bomb.png" id="1_wdom8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4i4n"]
@@ -28,6 +29,7 @@ animations = [{
 radius = 7.07107
 
 [node name="BombDrop" type="Node2D"]
+script = ExtResource("1_ibcdw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mvmt3")
