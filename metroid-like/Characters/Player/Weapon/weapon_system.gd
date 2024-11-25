@@ -30,7 +30,9 @@ func _ready() -> void:
 	missileQty = 0
 	bombQty = 0
 	GlobalSignals.missile_change.connect(_missile_change)
+	GlobalSignals.bomb_change.connect(_bomb_change)
 	GlobalSignals.missile_ui_update.emit(missileQty)
+	GlobalSignals.bomb_ui_update.emit(bombQty)
 	current_marker = current_arm.get_node("Marker2D")
 	
 func _process(delta: float) -> void:
