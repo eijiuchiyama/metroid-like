@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgxoqd8hfk4ov"]
+[gd_scene load_steps=17 format=3 uid="uid://bl6kqmp8q5sr"]
 
-[ext_resource type="Texture2D" uid="uid://c4aagcguxv3xp" path="res://assets/bomb.png" id="1_k1yxf"]
+[ext_resource type="Texture2D" uid="uid://cljo2tjxd4l0v" path="res://assets/bomb.png" id="1_k1yxf"]
 [ext_resource type="Script" path="res://Characters/Player/Weapon/bomb.gd" id="1_u5dwq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukefm"]

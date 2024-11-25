@@ -36,6 +36,8 @@ func _ready() -> void:
 	bombQty = 0
 	GlobalSignals.missile_change.connect(_missile_change)
 	GlobalSignals.missile_ui_update.emit(missileQty)
+	GlobalSignals.bomb_change.connect(_bomb_change)
+	GlobalSignals.bomb_ui_update.emit(bombQty)
 	current_marker = current_arm.get_node("Marker2D")
 	
 func _process(delta: float) -> void:
@@ -98,7 +100,6 @@ func _missile_change(value) -> void:
 func _bomb_change(value) -> void:
 	if GlobalVariables.BombUnlocked:
 		bombQty = max(bombQty + value, 0)
-		print(value)
 		GlobalSignals.bomb_ui_update.emit(bombQty)
 	
 func select_arm(arm : Sprite2D):
