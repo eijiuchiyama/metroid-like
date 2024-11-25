@@ -18,7 +18,6 @@ var previous_direction : int = 1
 var is_damaged = false
 	
 func _process(delta: float) -> void:
-	print(life.getHp())
 	if not is_damaged:
 		var input_direction = Input.get_vector("left", "right", "up", "down")
 		self.velocity.x = input_direction.x * horizontal_speed

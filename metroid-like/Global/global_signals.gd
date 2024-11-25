@@ -5,3 +5,12 @@ signal missile_ui_update(value)
 
 signal hp_change(value)
 signal hp_ui_update(value)
+
+signal bomb_change(value)
+signal bomb_ui_update(value)
+
+signal can_use_bomb(value)
+signal can_use_ball(value)
+signal can_use_missile(value)
+
+signal mutation_change(value)

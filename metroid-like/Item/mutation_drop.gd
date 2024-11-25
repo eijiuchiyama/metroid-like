@@ -1,4 +1,4 @@
 extends Item
 
 func collected() -> void:
-	GlobalSignals.damage.emit(100)
+	GlobalSignals.change_mutation.emit(100)
