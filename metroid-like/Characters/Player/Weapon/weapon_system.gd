@@ -65,8 +65,11 @@ func fire() -> void:
 	bullet.fire(self, current_marker, 10*Vector2(direction_x, direction.y))
 
 func switch() -> void:
-	weaponIndex = (weaponIndex + 1) % 2
-	ui.toggle_icon(WeaponType[weaponIndex])
+	if player_body.is_human():
+		weaponIndex = (weaponIndex + 1) % 2
+	else:
+		weaponIndex = 2
+	ui.toggle_icon(WeaponType[weaponIndex])	
 
 func _missile_change(value) -> void:
 	missileQty = max(missileQty + value, 0)
