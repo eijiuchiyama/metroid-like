@@ -17,7 +17,7 @@ func init_state() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("fire_key") and player_body.is_human():
+	if Input.is_action_just_pressed("fire_key"):
 		player_arm.fire()
 		
 	if Input.is_action_just_pressed("switch_key"):
