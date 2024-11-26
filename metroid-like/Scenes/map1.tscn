@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://dksv8feabhd4u"]
+[gd_scene load_steps=20 format=4 uid="uid://dksv8feabhd4u"]
 
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="1_vr8gb"]
 [ext_resource type="PackedScene" uid="uid://b0pnyykcyv4q1" path="res://portal.tscn" id="2_dye51"]
 [ext_resource type="PackedScene" uid="uid://dmbggbm8ehdh6" path="res://plataformas.tscn" id="3_duols"]
+[ext_resource type="PackedScene" uid="uid://bl6kqmp8q5sr" path="res://Characters/Player/Weapon/Bomb.tscn" id="3_foma8"]
 [ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://plataforma.tscn" id="4_4x6p4"]
 [ext_resource type="PackedScene" uid="uid://cvg2r1iq7uu6a" path="res://Characters/Enemy/EnemyScene/Lighter.tscn" id="5_bo8yp"]
 [ext_resource type="PackedScene" uid="uid://ctc5noae2h833" path="res://Item/BallDropAcquire.tscn" id="6_f50nf"]
@@ -636,6 +637,7 @@ position = Vector2(8775, -757)
 scale = Vector2(2, 2)
 
 [node name="Plataforma150" parent="Plataformas" instance=ExtResource("4_4x6p4")]
+visible = false
 position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
@@ -782,6 +784,7 @@ position = Vector2(7449, -1032)
 scale = Vector2(3, 3)
 
 [node name="ParedesQuebraveis" type="Node2D" parent="."]
+position = Vector2(579, 425)
 
 [node name="BreakableWall" parent="ParedesQuebraveis" instance=ExtResource("13_kcg7t")]
 position = Vector2(2429, 5000)
@@ -866,5 +869,8 @@ position = Vector2(1015, 504)
 
 [node name="BreakableWall" parent="." instance=ExtResource("13_kcg7t")]
 position = Vector2(584, 544)
+
+[node name="Bomb" parent="." instance=ExtResource("3_foma8")]
+position = Vector2(584, 518)
 
 [editable path="Plataformas"]
