@@ -20,7 +20,6 @@ func _missile_change(value) -> void:
 	
 func _bomb_change(value) -> void:
 	bombQty = max(bombQty + value, 0)
-	print(value)
 	GlobalSignals.bomb_ui_update.emit(bombQty)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

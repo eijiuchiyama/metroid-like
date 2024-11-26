@@ -12,8 +12,10 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func fire(manager: Node, marker: Node, dir: Vector2) -> void:
-	global_position = marker.global_position
-	manager.get_tree().root.add_child(self)
+	if PlayerStats.bombQty > 0:
+		GlobalSignals.bomb_change.emit(-1)
+		global_position = marker.global_position
+		manager.get_tree().root.add_child(self)
 
 func _on_timer_timeout() -> void:
 	$Area2D/CollisionShape2D.disabled = false
