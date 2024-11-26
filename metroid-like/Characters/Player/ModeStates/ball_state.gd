@@ -6,8 +6,9 @@ extends State
 @onready var player_hitbox = get_parent().get_parent().get_node("PlayerHitbox")
 
 func init_state() -> void:
-	player_arm.hide()
 	animation_manager.toggle_sprite("ball")
+	player_arm.hide()
+	player_arm.switch_weapon()
 	
 	collision_human.disabled = true
 	collision_ball.disabled = false

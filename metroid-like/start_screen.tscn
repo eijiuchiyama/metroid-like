@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://e1e1xa7icea6"]
+[gd_scene load_steps=6 format=3 uid="uid://e1e1xa7icea6"]
 
 [ext_resource type="Texture2D" uid="uid://bdog2tlojuowf" path="res://Mutandroid-logo.png" id="1_uxjy7"]
 [ext_resource type="Shader" path="res://start_screen.gdshader" id="1_x6pn5"]
 [ext_resource type="Script" path="res://start_button.gd" id="3_txam3"]
+[ext_resource type="Script" path="res://quit_button.gd" id="4_j228u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_el6wb"]
 render_priority = 0
@@ -37,4 +38,13 @@ offset_right = 625.0
 offset_bottom = 644.0
 text = "Atenágoras Silva - Fernando Yang - Lucas Uchiyama - Marcelo Spessoto - 2024"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 457.0
+offset_top = 502.0
+offset_right = 689.0
+offset_bottom = 563.0
+text = "QUIT"
+script = ExtResource("4_j228u")
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_button_2_pressed"]

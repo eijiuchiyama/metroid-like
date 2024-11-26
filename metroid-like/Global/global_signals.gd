@@ -9,8 +9,10 @@ signal hp_ui_update(value)
 signal bomb_change(value)
 signal bomb_ui_update(value)
 
-signal can_use_bomb(value)
-signal can_use_ball(value)
-signal can_use_missile(value)
+signal bomb_unlock()
+signal ball_unlock()
+signal missile_unlock()
 
 signal mutation_change(value)
+
+signal hit_by_explosion()

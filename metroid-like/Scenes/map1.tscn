@@ -640,7 +640,7 @@ position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
 [node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_bo8yp")]
-position = Vector2(858, 522)
+position = Vector2(1098, 265)
 scale = Vector2(2, 2)
 
 [node name="Itens" type="Node2D" parent="."]
@@ -842,11 +842,29 @@ scale = Vector2(2.5, 2.5)
 [node name="SceneUi" parent="." instance=ExtResource("13_sgc1o")]
 
 [node name="Player" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("14_u4egx")]
-position = Vector2(1618, 482)
+position = Vector2(730, 486)
 ui = NodePath("../SceneUi")
 
 [node name="BombDrop" parent="." instance=ExtResource("7_g25oi")]
 position = Vector2(1923, 503)
 scale = Vector2(3, 3)
+
+[node name="BombDropAdquire" parent="." instance=ExtResource("8_xbvrb")]
+position = Vector2(458, 505)
+
+[node name="MissileDropAcquire" parent="." instance=ExtResource("10_pwvi3")]
+position = Vector2(522, 510)
+
+[node name="BallDropAdquire" parent="." instance=ExtResource("6_f50nf")]
+position = Vector2(854, 504)
+
+[node name="MissileDrop" parent="." instance=ExtResource("9_oq2k1")]
+position = Vector2(949, 503)
+
+[node name="BombDrop2" parent="." instance=ExtResource("7_g25oi")]
+position = Vector2(1015, 504)
+
+[node name="BreakableWall" parent="." instance=ExtResource("13_kcg7t")]
+position = Vector2(584, 544)
 
 [editable path="Plataformas"]

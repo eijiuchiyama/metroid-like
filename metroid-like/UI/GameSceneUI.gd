@@ -1,16 +1,26 @@
 extends Node
 
 func _enter_tree() -> void:
+	GlobalSignals.missile_unlock.connect(_missile_unlock)
+	GlobalSignals.bomb_unlock.connect(_bomb_unlock)
 	GlobalSignals.missile_ui_update.connect(_missile_ui_update)
 	GlobalSignals.bomb_ui_update.connect(_bomb_ui_update)
 	GlobalSignals.hp_ui_update.connect(_hp_ui_update)
+	$Missile.visible = false
+	$Bomb.visible = false
 	$Missile/MissileQty.text = str(0).pad_zeros(3)
 	$Bomb/BombQty.text = str(0).pad_zeros(3)
 	$EnergyLabel/Energy.text = str(70).pad_zeros(3)
 
 func _process(delta: float) -> void:
 	pass
-	
+
+func _missile_unlock() -> void:
+	$Missile.visible = true
+
+func _bomb_unlock() -> void:
+	$Bomb.visible = true
+
 func _bomb_ui_update(value) -> void:
 	$Bomb/BombQty.text = str(value).pad_zeros(3)
 
@@ -31,3 +41,5 @@ func toggle_icon(icon):
 			$Bullet.modulate = Color.GREEN
 		"Bomb":
 			$Bomb.modulate = Color.GREEN
+		"Null":
+			pass

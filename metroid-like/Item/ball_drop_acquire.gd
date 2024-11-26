@@ -1,4 +1,5 @@
 extends Item
 
 func collected() -> void:
-	GlobalSignals.can_use_ball.emit(true)
+	GlobalVariables.MorphBallUnlocked = true
+	GlobalSignals.ball_unlock.emit()

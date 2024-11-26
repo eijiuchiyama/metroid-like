@@ -35,10 +35,10 @@ func tryAttack(delta: float):
 			attack_countdown = attack_delay
 			attack_current_duration = 0
 			attack_current_wait_duration = 0
-			attack_direction = (player.global_position - player_detector.global_position).normalized()
 
 func tackleAttack(delta):
 	if attack_current_wait_duration < attack_wait_duration:
+		attack_direction = (player.global_position - player_detector.global_position).normalized()
 		attack_current_wait_duration += delta
 		movement.fall(delta)
 	elif attack_current_duration < attack_duration:
