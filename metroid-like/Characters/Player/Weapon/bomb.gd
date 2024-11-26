@@ -1,24 +1,29 @@
-extends RigidBody2D
+extends Weapon
 
-# Called when the node enters the scene tree for the first time.
+const max_fall_speed: int = 1000
+const gravity: int = 980
+
 func _ready() -> void:
 	$AnimatedSprite2D.play('default')
 	$Timer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	velocity = Vector2(0, min(velocity.y + gravity * delta, max_fall_speed))
+	move_and_slide()
 
+func fire(manager: Node, marker: Node, dir: Vector2) -> void:
+	global_position = marker.global_position
+	manager.get_tree().root.add_child(self)
 
 func _on_timer_timeout() -> void:
 	$Area2D/CollisionShape2D.disabled = false
 	$AnimatedSprite2D.play('explosion')
 
-
 func _on_animated_sprite_2d_animation_finished() -> void:
-	var objetos = $Area2D.get_overlapping_bodies()
-	for objeto in objetos:
-		if "breakable" in objeto.get_groups():
-			objeto.queue_free()
-	queue_free()
+	var objects = $Area2D.get_overlapping_bodies()
+	for object in objects:
+		if "breakable" in object.get_groups():
+			object.queue_free()
+		if object is Enemy:
+			object.life.subHp(damage)
+	queue_free()	

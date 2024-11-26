@@ -60,14 +60,9 @@ func fire() -> void:
 	else:
 		attackCountdown = AttackDelay
 	
-	if weaponIndex == WeaponID.Bomb:
-		var bomb = load(weapons[WeaponID.Bomb]).instantiate()
-		bomb.position = current_marker.global_position   
-		get_tree().root.add_child(bomb)
-	else:
-		var bullet = load(weapons[weaponIndex]).instantiate()
-		var direction_x = 0 if current_arm == attack_up else player_body.previous_direction
-		bullet.fire(self, current_marker, 10*Vector2(direction_x, direction.y))
+	var bullet = load(weapons[weaponIndex]).instantiate()
+	var direction_x = 0 if current_arm == attack_up else player_body.previous_direction
+	bullet.fire(self, current_marker, 10*Vector2(direction_x, direction.y))
 
 func switch_weapon() -> void:
 	if ignore_first_switch_call:
