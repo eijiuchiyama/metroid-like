@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://w2e8je33aqem"]
+[gd_scene load_steps=21 format=4 uid="uid://w2e8je33aqem"]
 
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="1_70kp5"]
 [ext_resource type="PackedScene" uid="uid://b0pnyykcyv4q1" path="res://portal.tscn" id="2_l37od"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="14_d2sdt"]
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="15_hxrdd"]
 [ext_resource type="PackedScene" uid="uid://bl6kqmp8q5sr" path="res://Characters/Player/Weapon/Bomb.tscn" id="16_bqpxq"]
+[ext_resource type="AudioStream" uid="uid://d0xshv8nbv2gh" path="res://assets/Music and Effects/730260__simonus18__sci-fi-blade-runnerterminator-like-ominous-dytopian-tense-dark-thriller-horror-sfx.wav" id="17_swl0e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7xa4"]
 
@@ -154,6 +155,9 @@ position = Vector2(2531, -307)
 [node name="Plataforma12" parent="Plataformas" index="11"]
 position = Vector2(2613, -33)
 
+[node name="Plataforma16" parent="Plataformas" index="15"]
+position = Vector2(2417, 818)
+
 [node name="Plataforma18" parent="Plataformas" index="17"]
 position = Vector2(3217, -982)
 
@@ -215,7 +219,7 @@ position = Vector2(4738, 123)
 position = Vector2(4382, 109)
 
 [node name="Plataforma39" parent="Plataformas" index="38"]
-position = Vector2(4370, 2068)
+position = Vector2(4370, 2095)
 
 [node name="Plataforma40" parent="Plataformas" index="39"]
 position = Vector2(4793, 2067)
@@ -876,5 +880,10 @@ scale = Vector2(2.5, 2.5)
 
 [node name="Bomb" parent="." instance=ExtResource("16_bqpxq")]
 position = Vector2(1185, 420)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_swl0e")
+volume_db = 1.98
+autoplay = true
 
 [editable path="Plataformas"]

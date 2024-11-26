@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxblbq7cgt667"]
+[gd_scene load_steps=10 format=3 uid="uid://cxblbq7cgt667"]
 
 [ext_resource type="Texture2D" uid="uid://cmtd4c85r61ch" path="res://assets/Items/spritesheet_bomb_get.png" id="1_ap4wf"]
 [ext_resource type="Script" path="res://Item/bomb_drop_acquire.gd" id="1_v6fis"]
+[ext_resource type="AudioStream" uid="uid://dnkavbborymp6" path="res://assets/Music and Effects/gameboy-pluck-41265.mp3" id="3_o00w5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1d3c"]
 atlas = ExtResource("1_ap4wf")
@@ -65,5 +66,9 @@ sprite_frames = SubResource("SpriteFrames_qyc74")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_3qihl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o00w5")
+volume_db = 3.962
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

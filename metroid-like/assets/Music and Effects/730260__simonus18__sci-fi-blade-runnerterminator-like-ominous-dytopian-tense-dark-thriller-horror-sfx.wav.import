@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0xshv8nbv2gh"
+path="res://.godot/imported/730260__simonus18__sci-fi-blade-runnerterminator-like-ominous-dytopian-tense-dark-thriller-horror-sfx.wav-a478ce50e70b6746c5d03673cf2aa1f4.sample"
+
+[deps]
+
+source_file="res://assets/Music and Effects/730260__simonus18__sci-fi-blade-runnerterminator-like-ominous-dytopian-tense-dark-thriller-horror-sfx.wav"
+dest_files=["res://.godot/imported/730260__simonus18__sci-fi-blade-runnerterminator-like-ominous-dytopian-tense-dark-thriller-horror-sfx.wav-a478ce50e70b6746c5d03673cf2aa1f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
