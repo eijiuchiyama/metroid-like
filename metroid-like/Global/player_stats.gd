@@ -5,7 +5,6 @@ extends Node
 var missileQty = 0
 var bombQty = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	missileQty = 0
 	bombQty = 0
@@ -22,6 +21,7 @@ func _bomb_change(value) -> void:
 	bombQty = max(bombQty + value, 0)
 	GlobalSignals.bomb_ui_update.emit(bombQty)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func reset() -> void:
+	missileQty = 0
+	bombQty = 0
+	life.setHp(70)

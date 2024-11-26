@@ -12,7 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _retry() -> void:
-	get_tree().change_scene_to_file("res://Scenes/map1.tscn")
+	GlobalVariables.reset()
+	PlayerStats.reset()
+	get_tree().change_scene_to_file("res://Scenes/map1reworked.tscn")
 
 
 func _quit() -> void:

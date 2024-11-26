@@ -849,10 +849,6 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(730, 486)
 ui = NodePath("../SceneUi")
 
-[node name="BombDrop" parent="." instance=ExtResource("7_px8cq")]
-position = Vector2(1923, 503)
-scale = Vector2(3, 3)
-
 [node name="BombDropAdquire" parent="." instance=ExtResource("8_rsj0x")]
 position = Vector2(516, 503)
 scale = Vector2(3, 3)
