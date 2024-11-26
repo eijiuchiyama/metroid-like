@@ -38,6 +38,9 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		self.velocity.y = min(self.velocity.y + gravity * delta, max_fall_speed)
 	move_and_slide()
+	
+	if PlayerStats.life.hp <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over_scene.tscn")
 
 func is_human() -> bool: 
 	return animation_manager.current_sprite == animation_manager.human_sprite
