@@ -14,12 +14,14 @@ func _ready() -> void:
 	GlobalSignals.bomb_ui_update.emit(bombQty)
 
 func _missile_change(value) -> void:
-	missileQty = max(missileQty + value, 0)
-	GlobalSignals.missile_ui_update.emit(missileQty)
+	if GlobalVariables.MissileUnlocked:
+		missileQty = max(missileQty + value, 0)
+		GlobalSignals.missile_ui_update.emit(missileQty)
 	
 func _bomb_change(value) -> void:
-	bombQty = max(bombQty + value, 0)
-	GlobalSignals.bomb_ui_update.emit(bombQty)
+	if GlobalVariables.BombUnlocked:
+		bombQty = max(bombQty + value, 0)
+		GlobalSignals.bomb_ui_update.emit(bombQty)
 
 func reset() -> void:
 	missileQty = 0

@@ -110,6 +110,8 @@ size = Vector2(12, 5)
 
 [node name="Missile" type="CharacterBody2D"]
 script = ExtResource("1_1jqn2")
+damage = 30
+speed = 150
 
 [node name="MissileSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_owqym")

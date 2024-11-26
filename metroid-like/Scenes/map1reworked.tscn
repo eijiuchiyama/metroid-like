@@ -888,4 +888,7 @@ position = Vector2(2586, 263)
 [node name="Lighter3" parent="." instance=ExtResource("5_yglur")]
 position = Vector2(3916, 472)
 
+[node name="Dragon" parent="." instance=ExtResource("16_6eumq")]
+position = Vector2(2802, 1210)
+
 [editable path="Plataformas"]
