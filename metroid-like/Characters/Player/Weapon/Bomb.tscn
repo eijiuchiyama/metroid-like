@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl6kqmp8q5sr"]
+[gd_scene load_steps=17 format=3 uid="uid://bl6kqmp8q5sr"]
 
 [ext_resource type="Texture2D" uid="uid://cljo2tjxd4l0v" path="res://assets/bomb.png" id="1_k1yxf"]
 [ext_resource type="Script" path="res://Characters/Player/Weapon/bomb.gd" id="1_u5dwq"]
@@ -96,20 +96,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_posur"]
 radius = 18.2483
 
-[node name="Bomb" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwr18"]
+radius = 8.06226
+
+[node name="Bomb" type="RigidBody2D"]
 script = ExtResource("1_u5dwq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oeq6o")
 animation = &"explosion"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_posur")
 disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fwr18")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

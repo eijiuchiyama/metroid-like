@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,12 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	$CollisionShape2D.disabled = false
+	$Area2D/CollisionShape2D.disabled = false
 	$AnimatedSprite2D.play('explosion')
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	var objetos = get_overlapping_bodies()
+	var objetos = $Area2D.get_overlapping_bodies()
 	for objeto in objetos:
 		if "breakable" in objeto.get_groups():
 			objeto.queue_free()
