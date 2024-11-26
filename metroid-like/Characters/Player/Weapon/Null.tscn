@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwdiq1wnpeddh"]
+
+[ext_resource type="Script" path="res://Characters/Player/Weapon/null.gd" id="1_ylc60"]
+
+[node name="Null" type="Node2D"]
+script = ExtResource("1_ylc60")
