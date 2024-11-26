@@ -6,6 +6,7 @@ func _enter_tree() -> void:
 	GlobalSignals.hp_ui_update.connect(_hp_ui_update)
 	$Missile/MissileQty.text = str(0).pad_zeros(3)
 	$Bomb/BombQty.text = str(0).pad_zeros(3)
+	$EnergyLabel/Energy.text = str(70).pad_zeros(3)
 
 func _process(delta: float) -> void:
 	pass

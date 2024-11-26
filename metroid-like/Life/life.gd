@@ -1,7 +1,7 @@
 extends Node
 class_name Life 
 
-@export var hp : int = 100
+@export var hp : int = 70
 @export var hpMax : int = 100
 
 func getHp() -> int:

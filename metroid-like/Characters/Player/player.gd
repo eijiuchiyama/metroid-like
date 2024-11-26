@@ -5,7 +5,6 @@ class_name Player
 @onready var player_arm = get_node("PlayerArm")
 @onready var collision_human = get_node("CollisionShapeHuman")
 @onready var collision_ball = get_node("CollisionShapeBall")
-@onready var life = get_node("LifeComponent")
 
 @export var ui : CanvasLayer
 

@@ -22,17 +22,9 @@ var AttackDelay = 0.2
 var attackCountdown = 0
 
 var direction = Vector2(1, 0)
-var missileQty = 0
-var bombQty = 0
 
 func _ready() -> void:
 	attackCountdown = 0
-	missileQty = 0
-	bombQty = 0
-	GlobalSignals.missile_change.connect(_missile_change)
-	GlobalSignals.bomb_change.connect(_bomb_change)
-	GlobalSignals.missile_ui_update.emit(missileQty)
-	GlobalSignals.bomb_ui_update.emit(bombQty)
 	current_marker = current_arm.get_node("Marker2D")
 	
 func _process(delta: float) -> void:
@@ -72,15 +64,6 @@ func switch() -> void:
 	else:
 		weaponIndex = 2
 	ui.toggle_icon(WeaponType[weaponIndex])	
-
-func _missile_change(value) -> void:
-	missileQty = max(missileQty + value, 0)
-	GlobalSignals.missile_ui_update.emit(missileQty)
-	
-func _bomb_change(value) -> void:
-	bombQty = max(bombQty + value, 0)
-	print(value)
-	GlobalSignals.bomb_ui_update.emit(bombQty)
 	
 func select_arm(arm : Sprite2D):
 	current_arm.hide()

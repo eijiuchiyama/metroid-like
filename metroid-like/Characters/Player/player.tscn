@@ -1,28 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4585x0lkhthk"]
+[gd_scene load_steps=28 format=3 uid="uid://c4585x0lkhthk"]
 
-[ext_resource type="Script" path="res://Characters/state_manager.gd" id="1_2brj2"]
-[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_a72ib"]
-[ext_resource type="Script" path="res://Characters/Player/MovementStates/walk_state.gd" id="2_daa7g"]
-[ext_resource type="Script" path="res://Characters/Player/MovementStates/idle_state.gd" id="2_n2whw"]
-[ext_resource type="Script" path="res://Characters/Player/MovementStates/jump_state.gd" id="4_5jux8"]
-[ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_tb7uj"]
-[ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_62cyk"]
-[ext_resource type="Texture2D" uid="uid://cdh0nkqafjpog" path="res://assets/Spritesplayer/playerwalk1.png" id="9_3h5nc"]
-[ext_resource type="Script" path="res://Characters/player_animation_manager.gd" id="9_31ktm"]
-[ext_resource type="Texture2D" uid="uid://dtrp12ibvgxt7" path="res://assets/Spritesplayer/playerwalk2.png" id="10_2263s"]
-[ext_resource type="Texture2D" uid="uid://bh1ff1vhumk23" path="res://assets/Spritesplayer/playerjump.png" id="10_emee6"]
-[ext_resource type="Texture2D" uid="uid://2lg34reyasuh" path="res://assets/Spritesplayer/playerwalk3.png" id="11_880qr"]
-[ext_resource type="Texture2D" uid="uid://b20pu1lunhgv1" path="res://assets/Spritesplayer/playerwalk4.png" id="12_qa5rb"]
-[ext_resource type="Texture2D" uid="uid://c22gn3m3x2mg6" path="res://assets/Spritesplayer/playerwalk5.png" id="13_jsytd"]
-[ext_resource type="Texture2D" uid="uid://dkiumcor1sjgt" path="res://assets/Spritesplayer/playerwalk6.png" id="14_n8kih"]
-[ext_resource type="Texture2D" uid="uid://5minofyld1br" path="res://assets/Spritesplayer/playerwalk7.png" id="15_m31nv"]
-[ext_resource type="Texture2D" uid="uid://csmty4i2x0h34" path="res://assets/Spritesplayer/playerwalk8.png" id="16_0luxp"]
-[ext_resource type="Texture2D" uid="uid://bxvvf1jdrb4ei" path="res://assets/Spritesplayer/ball1.png" id="18_1d5g0"]
-[ext_resource type="PackedScene" uid="uid://ddbgjd1634n71" path="res://Characters/Player/PlayerArm.tscn" id="18_va4by"]
-[ext_resource type="Texture2D" uid="uid://ctaflftdagnnm" path="res://assets/Spritesplayer/ball2.png" id="19_msy5r"]
-[ext_resource type="Texture2D" uid="uid://bt08vx87lcjq8" path="res://assets/Spritesplayer/ball3.png" id="20_7oys2"]
-[ext_resource type="Texture2D" uid="uid://bywvpu3dhgnox" path="res://assets/Spritesplayer/ball4.png" id="21_t71ax"]
-[ext_resource type="Script" path="res://Life/autoCure.gd" id="23_iqg5c"]
+[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_ubpgu"]
+[ext_resource type="Script" path="res://Characters/state_manager.gd" id="2_xa06i"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/idle_state.gd" id="3_dyncv"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/walk_state.gd" id="4_3tmjp"]
+[ext_resource type="Script" path="res://Characters/Player/MovementStates/jump_state.gd" id="5_sy2gy"]
+[ext_resource type="Script" path="res://Characters/Player/ModeStates/human_state.gd" id="6_inkmc"]
+[ext_resource type="Script" path="res://Characters/Player/ModeStates/ball_state.gd" id="7_g84ta"]
+[ext_resource type="PackedScene" uid="uid://ddbgjd1634n71" path="res://Characters/Player/PlayerArm.tscn" id="8_nkcpc"]
+[ext_resource type="Script" path="res://Characters/player_animation_manager.gd" id="9_yyera"]
+[ext_resource type="Texture2D" uid="uid://bxvvf1jdrb4ei" path="res://assets/Spritesplayer/ball1.png" id="10_6egji"]
+[ext_resource type="Texture2D" uid="uid://bywvpu3dhgnox" path="res://assets/Spritesplayer/ball4.png" id="11_1rso8"]
+[ext_resource type="Texture2D" uid="uid://bt08vx87lcjq8" path="res://assets/Spritesplayer/ball3.png" id="12_v48lw"]
+[ext_resource type="Texture2D" uid="uid://ctaflftdagnnm" path="res://assets/Spritesplayer/ball2.png" id="13_cpkqq"]
+[ext_resource type="Texture2D" uid="uid://cdh0nkqafjpog" path="res://assets/Spritesplayer/playerwalk1.png" id="14_gvcbn"]
+[ext_resource type="Texture2D" uid="uid://bh1ff1vhumk23" path="res://assets/Spritesplayer/playerjump.png" id="15_gqivw"]
+[ext_resource type="Texture2D" uid="uid://dtrp12ibvgxt7" path="res://assets/Spritesplayer/playerwalk2.png" id="16_f7w6i"]
+[ext_resource type="Texture2D" uid="uid://2lg34reyasuh" path="res://assets/Spritesplayer/playerwalk3.png" id="17_f6mff"]
+[ext_resource type="Texture2D" uid="uid://b20pu1lunhgv1" path="res://assets/Spritesplayer/playerwalk4.png" id="18_rkmvq"]
+[ext_resource type="Texture2D" uid="uid://c22gn3m3x2mg6" path="res://assets/Spritesplayer/playerwalk5.png" id="19_s1m0p"]
+[ext_resource type="Texture2D" uid="uid://dkiumcor1sjgt" path="res://assets/Spritesplayer/playerwalk6.png" id="20_ybr7r"]
+[ext_resource type="Texture2D" uid="uid://5minofyld1br" path="res://assets/Spritesplayer/playerwalk7.png" id="21_a1ryn"]
+[ext_resource type="Texture2D" uid="uid://csmty4i2x0h34" path="res://assets/Spritesplayer/playerwalk8.png" id="22_y57c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03pdv"]
 size = Vector2(84, 152)
@@ -34,7 +33,7 @@ radius = 37.0135
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_1d5g0")
+"texture": ExtResource("10_6egji")
 }],
 "loop": true,
 "name": &"idle",
@@ -42,16 +41,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_1d5g0")
+"texture": ExtResource("10_6egji")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_t71ax")
+"texture": ExtResource("11_1rso8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_7oys2")
+"texture": ExtResource("12_v48lw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_msy5r")
+"texture": ExtResource("13_cpkqq")
 }],
 "loop": true,
 "name": &"jump",
@@ -59,16 +58,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_1d5g0")
+"texture": ExtResource("10_6egji")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_t71ax")
+"texture": ExtResource("11_1rso8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_7oys2")
+"texture": ExtResource("12_v48lw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_msy5r")
+"texture": ExtResource("13_cpkqq")
 }],
 "loop": true,
 "name": &"walking",
@@ -79,7 +78,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_3h5nc")
+"texture": ExtResource("14_gvcbn")
 }],
 "loop": true,
 "name": &"idle",
@@ -87,7 +86,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_emee6")
+"texture": ExtResource("15_gqivw")
 }],
 "loop": true,
 "name": &"jump",
@@ -95,28 +94,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_3h5nc")
+"texture": ExtResource("14_gvcbn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_2263s")
+"texture": ExtResource("16_f7w6i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_880qr")
+"texture": ExtResource("17_f6mff")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_qa5rb")
+"texture": ExtResource("18_rkmvq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jsytd")
+"texture": ExtResource("19_s1m0p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_n8kih")
+"texture": ExtResource("20_ybr7r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_m31nv")
+"texture": ExtResource("21_a1ryn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_0luxp")
+"texture": ExtResource("22_y57c4")
 }],
 "loop": true,
 "name": &"walking",
@@ -127,7 +126,7 @@ animations = [{
 size = Vector2(75, 150)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_a72ib")
+script = ExtResource("1_ubpgu")
 
 [node name="CollisionShapeHuman" type="CollisionShape2D" parent="."]
 visible = false
@@ -140,42 +139,42 @@ position = Vector2(2, 32)
 shape = SubResource("CircleShape2D_tyn0x")
 
 [node name="MovementStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
-script = ExtResource("1_2brj2")
+script = ExtResource("2_xa06i")
 current_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("walk_state", "jump_state")]
-script = ExtResource("2_n2whw")
+script = ExtResource("3_dyncv")
 walk_state = NodePath("../WalkState")
 jump_state = NodePath("../JumpState")
 
 [node name="WalkState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state", "jump_state")]
-script = ExtResource("2_daa7g")
+script = ExtResource("4_3tmjp")
 idle_state = NodePath("../IdleState")
 jump_state = NodePath("../JumpState")
 
 [node name="JumpState" type="Node" parent="MovementStateManager" node_paths=PackedStringArray("idle_state", "player")]
-script = ExtResource("4_5jux8")
+script = ExtResource("5_sy2gy")
 idle_state = NodePath("../IdleState")
 player = NodePath("../..")
 
 [node name="ModeStateManager" type="Node" parent="." node_paths=PackedStringArray("current_state")]
-script = ExtResource("1_2brj2")
+script = ExtResource("2_xa06i")
 current_state = NodePath("HumanState")
 
 [node name="HumanState" type="Node" parent="ModeStateManager" node_paths=PackedStringArray("ball_state")]
-script = ExtResource("6_tb7uj")
+script = ExtResource("6_inkmc")
 ball_state = NodePath("../BallState")
 
 [node name="BallState" type="Node" parent="ModeStateManager" node_paths=PackedStringArray("human_state")]
-script = ExtResource("7_62cyk")
+script = ExtResource("7_g84ta")
 human_state = NodePath("../HumanState")
 
-[node name="PlayerArm" parent="." instance=ExtResource("18_va4by")]
+[node name="PlayerArm" parent="." instance=ExtResource("8_nkcpc")]
 z_index = 1
 position = Vector2(2, -19)
 
 [node name="AnimationManager" type="Node2D" parent="." node_paths=PackedStringArray("ball_sprite", "human_sprite")]
-script = ExtResource("9_31ktm")
+script = ExtResource("9_yyera")
 ball_sprite = NodePath("BallSprite")
 human_sprite = NodePath("HumanSprite")
 
@@ -194,10 +193,6 @@ sprite_frames = SubResource("SpriteFrames_gacwv")
 animation = &"walking"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="LifeComponent" type="Node" parent="."]
-script = ExtResource("23_iqg5c")
-hp = 70
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
 

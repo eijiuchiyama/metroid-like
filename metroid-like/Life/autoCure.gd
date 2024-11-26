@@ -11,7 +11,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	GlobalSignals.hp_change.connect(_hp_change)
-	GlobalSignals.hp_ui_update.emit(hp)
+	GlobalSignals.hp_ui_update.emit(70)
 
 func cure():
 	if hp < hpMax * .2:
