@@ -851,24 +851,30 @@ position = Vector2(1923, 503)
 scale = Vector2(3, 3)
 
 [node name="BombDropAdquire" parent="." instance=ExtResource("8_rsj0x")]
-position = Vector2(458, 505)
+position = Vector2(516, 503)
+scale = Vector2(3, 3)
 
 [node name="MissileDropAcquire" parent="." instance=ExtResource("10_wkfe7")]
-position = Vector2(522, 510)
+position = Vector2(620, 502)
+scale = Vector2(3, 3)
 
 [node name="BallDropAdquire" parent="." instance=ExtResource("6_vjqyi")]
 position = Vector2(854, 504)
+scale = Vector2(3, 3)
 
 [node name="MissileDrop" parent="." instance=ExtResource("9_feajt")]
 position = Vector2(949, 503)
+scale = Vector2(3, 3)
 
 [node name="BombDrop2" parent="." instance=ExtResource("7_px8cq")]
-position = Vector2(1015, 504)
+position = Vector2(1036, 500)
+scale = Vector2(3, 3)
 
 [node name="BreakableWall" parent="." instance=ExtResource("13_wp2ly")]
-position = Vector2(584, 544)
+position = Vector2(1187, 520)
+scale = Vector2(2.5, 2.5)
 
 [node name="Bomb" parent="." instance=ExtResource("16_bqpxq")]
-position = Vector2(584, 511)
+position = Vector2(1185, 420)
 
 [editable path="Plataformas"]
