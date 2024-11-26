@@ -53,7 +53,7 @@ func fire() -> void:
 		WeaponID.Gun: "res://Characters/Player/Weapon/Gun.tscn",
 		WeaponID.Missile: "res://Characters/Player/Weapon/Missile.tscn",
 		WeaponID.Bomb: "res://Characters/Player/Weapon/Bomb.tscn",
-		WeaponID.Null: "res://Characters/Player/Weapon/Bomb.tscn"
+		WeaponID.Null: "res://Characters/Player/Weapon/Null.tscn"
 	}
 	
 	if attackCountdown > 0:
