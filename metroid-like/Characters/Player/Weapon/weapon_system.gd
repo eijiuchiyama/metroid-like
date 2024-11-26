@@ -78,8 +78,6 @@ func switch_weapon() -> void:
 		else:
 			weaponIndex = WeaponID.Gun
 	else:
-		weaponIndex = 2
-	ui.toggle_icon(WeaponType[weaponIndex])	
 		if GlobalVariables.BombUnlocked:
 			weaponIndex = WeaponID.Bomb
 		else:
