@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://w2e8je33aqem"]
+[gd_scene load_steps=22 format=4 uid="uid://w2e8je33aqem"]
 
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="1_70kp5"]
 [ext_resource type="PackedScene" uid="uid://b0pnyykcyv4q1" path="res://portal.tscn" id="2_l37od"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://gckf3teop4gv" path="res://BreakableWall.tscn" id="13_wp2ly"]
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="14_d2sdt"]
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="15_hxrdd"]
+[ext_resource type="PackedScene" uid="uid://bmilvyg6vx7m1" path="res://Characters/Enemy/EnemyScene/Dragon.tscn" id="16_6eumq"]
+[ext_resource type="PackedScene" uid="uid://dbrycnoj2bqcx" path="res://Characters/Enemy/EnemyScene/Bug.tscn" id="16_h78hn"]
 [ext_resource type="AudioStream" uid="uid://d0xshv8nbv2gh" path="res://assets/Music and Effects/730260__simonus18__sci-fi-blade-runnerterminator-like-ominous-dytopian-tense-dark-thriller-horror-sfx.wav" id="17_swl0e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h7xa4"]
@@ -643,10 +645,6 @@ scale = Vector2(2, 2)
 position = Vector2(2902, -1074)
 scale = Vector2(2, 2)
 
-[node name="TestEnemy" parent="Plataformas" instance=ExtResource("5_yglur")]
-position = Vector2(1098, 265)
-scale = Vector2(2, 2)
-
 [node name="Itens" type="Node2D" parent="."]
 
 [node name="BallDropAdquire" parent="Itens" instance=ExtResource("6_vjqyi")]
@@ -877,5 +875,17 @@ scale = Vector2(2.5, 2.5)
 stream = ExtResource("17_swl0e")
 volume_db = 1.98
 autoplay = true
+
+[node name="Lighter" parent="." instance=ExtResource("16_h78hn")]
+position = Vector2(2369, 1603)
+
+[node name="Lighter2" parent="." instance=ExtResource("16_h78hn")]
+position = Vector2(3180, 1613)
+
+[node name="Dragon2" parent="." instance=ExtResource("16_6eumq")]
+position = Vector2(2586, 263)
+
+[node name="Lighter3" parent="." instance=ExtResource("5_yglur")]
+position = Vector2(3916, 472)
 
 [editable path="Plataformas"]

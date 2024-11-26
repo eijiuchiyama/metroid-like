@@ -10,6 +10,8 @@ var move_timer : Timer
 @export var sight_range: int = 500
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 
+@onready var sprite = get_parent().get_node("Sprite")
+
 func _enter_tree() -> void:
 	body = get_parent()
 	origin = body.global_position
@@ -22,6 +24,7 @@ func _ready():
 	set_movement()
 
 func move(delta: float) -> void:
+	sprite.play("walk")
 	if player_in_range():
 		if (player.global_position - body.global_position).x > 0:
 			change_direction(0)

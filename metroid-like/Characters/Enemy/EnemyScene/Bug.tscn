@@ -1,36 +1,30 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvg2r1iq7uu6a"]
+[gd_scene load_steps=17 format=3 uid="uid://dbrycnoj2bqcx"]
 
-[ext_resource type="Script" path="res://Characters/Enemy/enemy.gd" id="1_q7y5i"]
-[ext_resource type="Script" path="res://Characters/Enemy/Attack/bullet_attack.gd" id="2_mww5i"]
-[ext_resource type="Script" path="res://Characters/Enemy/Movement/platform_walk.gd" id="3_l53np"]
-[ext_resource type="Script" path="res://Life/life.gd" id="4_est3j"]
-[ext_resource type="Texture2D" uid="uid://c1x36cadyl6g3" path="res://assets/SpaceStationAda/SpaceStation_Projectiles_Sheet.png" id="5_2bxvu"]
-[ext_resource type="Texture2D" uid="uid://d2qi37j1jedfk" path="res://assets/Spritesenemy/enemy1-1.png" id="5_285oy"]
-[ext_resource type="Texture2D" uid="uid://bcy47nj7u8nq6" path="res://assets/Spritesenemy/enemy1-2.png" id="6_ws0ng"]
-[ext_resource type="Texture2D" uid="uid://c4e4nwtyn1p4v" path="res://assets/Spritesenemy/enemy1-3.png" id="7_xg58n"]
-[ext_resource type="Texture2D" uid="uid://ckqj403wbr220" path="res://assets/Spritesenemy/enemy1-4.png" id="8_oxvsj"]
-[ext_resource type="Texture2D" uid="uid://dqlva2dnthwh2" path="res://assets/Spritesenemy/enemy1-5.png" id="9_2yqcf"]
-[ext_resource type="Texture2D" uid="uid://x7n7xxf1xm3w" path="res://assets/Spritesenemy/enemy1-6.png" id="10_mfvpa"]
+[ext_resource type="Script" path="res://Characters/Enemy/enemy.gd" id="1_4u0ri"]
+[ext_resource type="Script" path="res://Characters/Enemy/Attack/tackle_attack.gd" id="2_ao86b"]
+[ext_resource type="Script" path="res://Characters/Enemy/Movement/platform_walk.gd" id="3_1mldm"]
+[ext_resource type="Script" path="res://Life/life.gd" id="4_iubsu"]
+[ext_resource type="Texture2D" uid="uid://c1x36cadyl6g3" path="res://assets/SpaceStationAda/SpaceStation_Projectiles_Sheet.png" id="5_4qe6q"]
+[ext_resource type="Texture2D" uid="uid://c57fd2o5grpg3" path="res://assets/Spritesenemy/enemy2-2.png" id="6_tn16f"]
+[ext_resource type="Texture2D" uid="uid://bhd4ymj7b0m4t" path="res://assets/Spritesenemy/enemy2-1.png" id="7_io2s1"]
+[ext_resource type="Texture2D" uid="uid://bh7kawo7kolth" path="res://assets/Spritesenemy/enemy2-3.png" id="8_efyvy"]
+[ext_resource type="Texture2D" uid="uid://ngp3qylnmj4p" path="res://assets/Spritesenemy/enemy2-4.png" id="9_y3u5b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pud2m"]
-atlas = ExtResource("5_2bxvu")
+atlas = ExtResource("5_4qe6q")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hawme"]
-atlas = ExtResource("5_2bxvu")
+atlas = ExtResource("5_4qe6q")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1qsf"]
-atlas = ExtResource("5_2bxvu")
+atlas = ExtResource("5_4qe6q")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1ehp"]
-atlas = ExtResource("5_2bxvu")
+atlas = ExtResource("5_4qe6q")
 region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_or8e8"]
-atlas = ExtResource("5_285oy")
-region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dflo3"]
 animations = [{
@@ -53,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_xg58n")
+"texture": ExtResource("6_tn16f")
 }],
 "loop": true,
 "name": &"idle",
@@ -61,22 +55,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_or8e8")
+"texture": ExtResource("7_io2s1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ws0ng")
+"texture": ExtResource("6_tn16f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xg58n")
+"texture": ExtResource("8_efyvy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_oxvsj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_2yqcf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_mfvpa")
+"texture": ExtResource("9_y3u5b")
 }],
 "loop": true,
 "name": &"walk",
@@ -89,27 +77,28 @@ size = Vector2(34, 45)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lf71n"]
 radius = 26.0
 
-[node name="Lighter" type="CharacterBody2D"]
+[node name="Bug" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_q7y5i")
+script = ExtResource("1_4u0ri")
 collision_damage = 10
 
 [node name="Attack" type="Node" parent="."]
-script = ExtResource("2_mww5i")
+script = ExtResource("2_ao86b")
 attack_range = 500
 
 [node name="Movement" type="Node" parent="."]
-script = ExtResource("3_l53np")
+script = ExtResource("3_1mldm")
 
 [node name="Life" type="Node" parent="."]
-script = ExtResource("4_est3j")
+script = ExtResource("4_iubsu")
 hp = 50
 hpMax = 50
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_dflo3")
-animation = &"idle"
+animation = &"walk"
+flip_h = true
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -2.5)
