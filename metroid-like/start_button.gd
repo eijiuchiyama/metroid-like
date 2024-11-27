@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/map1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/map1reworked.tscn")
 	#pass # Replace with function body.
