@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://rwcs1rwxgdjk"]
+[gd_scene load_steps=16 format=3 uid="uid://rwcs1rwxgdjk"]
 
 [ext_resource type="Script" path="res://Characters/Enemy/enemy.gd" id="1_fuie3"]
 [ext_resource type="Texture2D" uid="uid://c1x36cadyl6g3" path="res://assets/SpaceStationAda/SpaceStation_Projectiles_Sheet.png" id="1_k8udi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Characters/Enemy/Attack/tackle_attack.gd" id="2_ylgxo"]
 [ext_resource type="Script" path="res://Characters/Enemy/Movement/fly.gd" id="3_3xfbe"]
 [ext_resource type="Script" path="res://Life/life.gd" id="4_wyumy"]
+[ext_resource type="AudioStream" uid="uid://bknn0uskrg7yp" path="res://assets/Music and Effects/winsquare-6993.mp3" id="8_j3nfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pud2m"]
 atlas = ExtResource("1_k8udi")
@@ -39,7 +40,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j1ehp")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -86,7 +87,8 @@ hp = 100
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ie16h")
-animation = &"idle"
+animation = &"death"
+flip_h = true
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ightj")
@@ -104,8 +106,12 @@ target_position = Vector2(0, 36)
 [node name="Player_Detector" type="RayCast2D" parent="."]
 position = Vector2(17, -2)
 exclude_parent = false
-target_position = Vector2(40, 0)
+target_position = Vector2(129, 0)
 hit_from_inside = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_j3nfe")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

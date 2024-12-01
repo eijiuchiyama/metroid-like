@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://cyvtwl0smaydf"]
+[gd_scene load_steps=9 format=4 uid="uid://cyvtwl0smaydf"]
 
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="1_y0jn1"]
 [ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://Scenes/plataforma.tscn" id="2_1jaay"]
+[ext_resource type="PackedScene" uid="uid://cwuomcfkrils8" path="res://Item/LifeDrop.tscn" id="3_qfh3x"]
 [ext_resource type="PackedScene" uid="uid://rwcs1rwxgdjk" path="res://Characters/Enemy/EnemyScene/Boss.tscn" id="4_hyoic"]
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="4_to70p"]
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="5_mn0a8"]
@@ -169,6 +170,24 @@ scale = Vector2(2, 2)
 [node name="Plataforma12" parent="Plataformas" instance=ExtResource("2_1jaay")]
 position = Vector2(3693, -176)
 scale = Vector2(2, 2)
+
+[node name="Itens" type="Node2D" parent="."]
+
+[node name="LifeDrop" parent="Itens" instance=ExtResource("3_qfh3x")]
+position = Vector2(3539, 725)
+scale = Vector2(3, 3)
+
+[node name="LifeDrop2" parent="Itens" instance=ExtResource("3_qfh3x")]
+position = Vector2(4290, 536)
+scale = Vector2(3, 3)
+
+[node name="LifeDrop3" parent="Itens" instance=ExtResource("3_qfh3x")]
+position = Vector2(3053, -228)
+scale = Vector2(3, 3)
+
+[node name="LifeDrop4" parent="Itens" instance=ExtResource("3_qfh3x")]
+position = Vector2(3921, 398)
+scale = Vector2(3, 3)
 
 [node name="Boss" parent="." instance=ExtResource("4_hyoic")]
 position = Vector2(3999, -218)

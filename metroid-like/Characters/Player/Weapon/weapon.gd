@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Weapon
 
 var direction = Vector2(0, 0)
-@export var damage = 10
-@export var speed = 100
+@export var damage: int = 10
+@export var speed: int = 100
 
 func fire(manager: Node, marker: Node, dir: Vector2) -> void:
 	global_position = marker.global_position
