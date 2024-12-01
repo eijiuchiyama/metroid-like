@@ -1,13 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://lfwj4p7xn0gk"]
 
-[ext_resource type="Script" path="res://Scenes/you_won_scene.gd" id="1_crwyq"]
+[ext_resource type="Script" path="res://Scenes/you_won.gd" id="1_crwyq"]
 
 [node name="YouWonScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_crwyq")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 1167.0
+offset_bottom = 659.0
+color = Color(0.239216, 0, 1, 1)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 322.0
 offset_right = 768.0
@@ -23,12 +32,13 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_top = 106.0
 offset_right = 1157.0
 offset_bottom = 247.0
 theme_override_font_sizes/font_size = 50
-text = "Congratulations
-You Won"
+text = "Congratulations!
+You Won The Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
