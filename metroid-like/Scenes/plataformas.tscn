@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmbggbm8ehdh6"]
 
-[ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://plataforma.tscn" id="1_xegah"]
+[ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://Scenes/plataforma.tscn" id="1_xegah"]
 
 [node name="Plataformas" type="Node2D"]
 

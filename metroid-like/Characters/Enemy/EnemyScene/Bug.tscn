@@ -97,7 +97,7 @@ hpMax = 50
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_dflo3")
-animation = &"walk"
+animation = &"idle"
 flip_h = true
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

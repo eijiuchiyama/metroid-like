@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://e1e1xa7icea6"]
 
 [ext_resource type="Texture2D" uid="uid://bdog2tlojuowf" path="res://Mutandroid-logo.png" id="1_uxjy7"]
-[ext_resource type="Shader" path="res://start_screen.gdshader" id="1_x6pn5"]
-[ext_resource type="Script" path="res://start_button.gd" id="3_txam3"]
+[ext_resource type="Shader" path="res://Scenes/start_screen.gdshader" id="1_x6pn5"]
+[ext_resource type="Script" path="res://Scenes/start_button.gd" id="3_txam3"]
 [ext_resource type="Script" path="res://quit_button.gd" id="4_j228u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_el6wb"]
