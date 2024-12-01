@@ -12,9 +12,6 @@ func _enter_tree() -> void:
 	$Bomb/BombQty.text = str(0).pad_zeros(3)
 	$EnergyLabel/Energy.text = str(70).pad_zeros(3)
 
-func _process(delta: float) -> void:
-	pass
-
 func _missile_unlock() -> void:
 	$Missile.visible = true
 

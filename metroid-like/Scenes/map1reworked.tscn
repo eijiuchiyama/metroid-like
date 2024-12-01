@@ -936,8 +936,4 @@ autoplay = true
 position = Vector2(11525, 5581)
 scale = Vector2(3, 3)
 
-[node name="Portal2" parent="." instance=ExtResource("2_l37od")]
-position = Vector2(957, 463)
-scale = Vector2(3, 3)
-
 [editable path="Plataformas"]
