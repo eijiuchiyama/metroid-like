@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cyvtwl0smaydf"]
+[gd_scene load_steps=10 format=4 uid="uid://cyvtwl0smaydf"]
 
 [ext_resource type="Texture2D" uid="uid://c2vcjdnwf0bnk" path="res://assets/SpaceStationAda/SpaceStation_Tileset.png" id="1_y0jn1"]
 [ext_resource type="PackedScene" uid="uid://cpiss2oelgy3k" path="res://Scenes/plataforma.tscn" id="2_1jaay"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rwcs1rwxgdjk" path="res://Characters/Enemy/EnemyScene/Boss.tscn" id="4_hyoic"]
 [ext_resource type="PackedScene" uid="uid://bt5si5siwifmn" path="res://UI/GameSceneUI.tscn" id="4_to70p"]
 [ext_resource type="PackedScene" uid="uid://c4585x0lkhthk" path="res://Characters/Player/player.tscn" id="5_mn0a8"]
+[ext_resource type="AudioStream" uid="uid://quhv6kgk00f4" path="res://assets/Music and Effects/430885__audiopapkin__futuristic-soundscape.wav" id="7_7qy73"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dyidj"]
 texture = ExtResource("1_y0jn1")
@@ -197,3 +198,7 @@ scale = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." instance=ExtResource("5_mn0a8")]
 position = Vector2(132, 328)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7qy73")
+autoplay = true

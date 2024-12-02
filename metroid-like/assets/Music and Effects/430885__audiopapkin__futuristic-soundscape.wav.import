@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://quhv6kgk00f4"
+path="res://.godot/imported/430885__audiopapkin__futuristic-soundscape.wav-dcacb641b81639c3ce29390535ccf8f8.sample"
+
+[deps]
+
+source_file="res://assets/Music and Effects/430885__audiopapkin__futuristic-soundscape.wav"
+dest_files=["res://.godot/imported/430885__audiopapkin__futuristic-soundscape.wav-dcacb641b81639c3ce29390535ccf8f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

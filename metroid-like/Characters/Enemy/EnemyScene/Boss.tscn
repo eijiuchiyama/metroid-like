@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://rwcs1rwxgdjk"]
 
-[ext_resource type="Script" path="res://Characters/Enemy/enemy.gd" id="1_fuie3"]
+[ext_resource type="Script" path="res://Characters/Enemy/EnemyScene/boss.gd" id="1_emgxp"]
 [ext_resource type="Texture2D" uid="uid://c1x36cadyl6g3" path="res://assets/SpaceStationAda/SpaceStation_Projectiles_Sheet.png" id="1_k8udi"]
 [ext_resource type="Texture2D" uid="uid://cqm654awc36hf" path="res://assets/Spritesenemy/Boss1.png" id="1_oegkb"]
 [ext_resource type="Texture2D" uid="uid://bna6x4c5ck2mh" path="res://assets/Spritesenemy/Boss2.png" id="2_jvawe"]
@@ -71,7 +71,7 @@ size = Vector2(46, 72)
 radius = 36.0139
 
 [node name="Boss" type="CharacterBody2D"]
-script = ExtResource("1_fuie3")
+script = ExtResource("1_emgxp")
 
 [node name="Attack" type="Node" parent="."]
 script = ExtResource("2_ylgxo")

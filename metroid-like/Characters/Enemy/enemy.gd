@@ -9,7 +9,6 @@ class_name Enemy
 @export var collision_damage: int
 
 var in_attack: bool = false
-var dead: bool = false
 
 func _process(delta: float) -> void:
 	if life.hp > 0:
@@ -30,10 +29,5 @@ func death():
 	Sprite.play("death")
 
 func _on_sprite_animation_finished() -> void:
-	if Sprite.animation == "death" and dead == false:
-		dead = true
-		$AudioStreamPlayer2D.play()
-
-func _on_audio_stream_player_2d_finished() -> void:
-	print("Audio finished")
-	get_tree().change_scene_to_file("res://Scenes/you_won_scene.tscn")
+	if Sprite.animation == "death":
+		queue_free()
