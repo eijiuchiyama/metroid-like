@@ -6,7 +6,7 @@ Durante o projeto, implementaremos os mecanismos mais característicos do jogo c
 
 ![Features](Estrutura do jogo/Features.png)
 
-Com base nisto, construímos o diagrama de classes para ajudar o processo de desenvolvimento:
+Com base nisto, construímos o seguinte diagrama de classes para ajudar o processo de desenvolvimento:
 
 ![Class](Estrutura do jogo/Class.jpg)
 
@@ -75,8 +75,8 @@ Observação: Esse diagrama representa como o padrão foi implementado via scrip
 
 Na fase 2, utilizamos o padrão estratégia (strategy) para facilitar a troca de armas. A máquina de estados, nesta fase, está mais completa que a anterior, tendo implementado a alternância entre as formas humana e bola. Começamos a criar os inimigos do jogo nesta fase, mas ainda não os havíamos adicionado nele.
 
-#### Padrão de Estratégia (Strategy pattern)
-Como os diferentes armas possuem os mesmos métodos que podem ser acessadas pelas outras classes, foi aplicado o padrão de estratégia a fim de evitar o uso dos desvios condicionais para identificação do tipo de arma, com isso foi possível diminuir a repetição de código e consequentemente facilitar a sua leitura e entendimento.
+#### Padrão de Fábrica (Factory pattern)
+Como os diferentes armas possuem os mesmos métodos que podem ser acessadas pelas outras classes, foi aplicado o padrão de fábbrica junto com de estratégia a fim de evitar o uso dos desvios condicionais para identificação do tipo de arma, com isso foi possível diminuir a repetição de código e consequentemente facilitar a sua leitura e entendimento.
 
 #### Atualizações no padrão de Estados (State Pattern)
 
@@ -86,6 +86,22 @@ O projeto é inspirado na série de jogos Metroid, em que a personagem principal
 alternar de formas: forma antropomórfica e forma de "bola". A primeira é a forma padrão e "humana", em que a personagem pode ficar parada, atirar, pular e andar. Na segunda forma, a personagem fica menor e pode acessar áreas estreitas, mas também pode ficar parada e andar. Com pequnas variações, pode também pular após o desbloqueio da habilidade de pulo para essa forma e lançar bombas (do ponto de vista de impementação, é um "tiro" que adota outra estratégia do padrão Estratégia).
 
 Repare que ambas as formas compartilham uma máquina de estados quase idêntica. Criar estados "bolaIdle", "bolaWalk", "bolaJump" seria extremamente redundante. A solução para incorporar essa mecânica de jogo com o padrão de estados foi a adoção de máquinas de estados concorrentes. Existem dois StateManager agora. O primeiro StateManger é o descrito na fase 1. O segundo StateManager é um gerenciador de estados que gerencia dois estados: os novos estados humana e bola. Esses estados, quando aplicados (ou seja, durante a execução do método init_state), definem os novos sprites de idle, walking, jumping do gerenciador de animações do personagem, a nova hitbox e (ainda não implementado, mas planejado para a entrega), a nova estratégia de tiro, de acordo com o novo estado.
+
+### Fase 3
+
+Nesta fase, o jogo está quase concluído, com a maioria das funcionalidades planejadas já implementadas. Entre elas, destacam-se a interação do jogador com inimigos e o ambiente, power-ups que desbloqueiam habilidades no jogo, a inclusão do mapa onde a ação se desenvolve, entre outros recursos. Além disso, foram introduzidos dois novos padrões no jogo, que são:
+
+#### Padrão de Singleton
+
+Sendo uma das funcionalidades oferecidas pela engine Godot, não foi necessário implementar nosso próprio código para utilizar este padrão. Para isso, basta adicionar a classe que desejamos usar como Singleton na seção correspondente da engine. Assim, ela pode ser acessada de forma única em todo o jogo:
+
+#### Padrão de Estratégia (Strategy Pattern)
+
+Os inimigos do jogo podem apresentar diversos tipos de movimento e ataque contra o jogador, sendo muitas vezes idênticos entre si em certos aspectos. Para evitar a repetição de código, utilizamos o padrão de estratégia, permitindo selecionar os componentes que definem o comportamento de um tipo específico de inimigo, como ilustrado no diagrama abaixo:
+
+#### Diagrama final
+
+Após as fases de desenvolvimento, o diagrama do nosso jogo tornou-se mais completo e detalhado em comparação com o protótipo criado no início do projeto. Ele está estruturado da seguinte forma:
 
 ## Integrantes do grupo e seus NUSP
 Atenágoras Silva - 5447262
@@ -100,3 +116,7 @@ Marcelo Mendes Spessoto Junior - 12542380
 Fabio Kon: Professor
 
 Isaque Alves: Monitor
+
+## Créditos
+SpaceStationAda - Jestan
+sci-fi blade runner/terminator-like ominous dytopian tense dark thriller horror sfx  - Simonus18
