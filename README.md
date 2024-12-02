@@ -67,7 +67,7 @@ Entretanto, a adoção de tal padrão ainda é interessante para o projeto visan
 
 Em resumo, conforme a complexidade de um jogo aumenta, os estados tendem a possuirem maiores especificidades e propriedades únicas. No estado atual do projeto, a adoção do padrão auxilia no gerenciamento de animações e facilita a adição de futuras funcionalidades. Outra observação é que a habilidade de atirar está sendo implementada por outro membro do grupo e com base no padrão Estratégia, mas, em um momento no futuro, espera-se incorporar a lógica de tiro em um novo estado.
 
-![Class](Estrutura do jogo/State.jpg)
+![State](Estrutura do jogo/State_Pattern_UML.png)
 
 Observação: Esse diagrama representa como o padrão foi implementado via script. Em Godot, existe a separação entre cenas/nós e scripts (código atribuído ao nó). Na cena do jogador, o nó do jogador "contém" o nó do StateManager (ou seja é nó pai do nó StateManger), mas, por código, não há interação direta entre essas classes. 
 
@@ -77,6 +77,8 @@ Na fase 2, utilizamos o padrão estratégia (strategy) para facilitar a troca de
 
 #### Padrão de Fábrica (Factory pattern)
 Como os diferentes armas possuem os mesmos métodos que podem ser acessadas pelas outras classes, foi aplicado o padrão de fábbrica junto com de estratégia a fim de evitar o uso dos desvios condicionais para identificação do tipo de arma, com isso foi possível diminuir a repetição de código e consequentemente facilitar a sua leitura e entendimento.
+
+![Factory](Estrutura do jogo/Factory_Pattern_UML.png)
 
 #### Atualizações no padrão de Estados (State Pattern)
 
@@ -95,13 +97,19 @@ Nesta fase, o jogo está quase concluído, com a maioria das funcionalidades pla
 
 Sendo uma das funcionalidades oferecidas pela engine Godot, não foi necessário implementar nosso próprio código para utilizar este padrão. Para isso, basta adicionar a classe que desejamos usar como Singleton na seção correspondente da engine. Assim, ela pode ser acessada de forma única em todo o jogo:
 
+![Singleton](Estrutura do jogo/Singleton_Pattern.png)
+
 #### Padrão de Estratégia (Strategy Pattern)
 
 Os inimigos do jogo podem apresentar diversos tipos de movimento e ataque contra o jogador, sendo muitas vezes idênticos entre si em certos aspectos. Para evitar a repetição de código, utilizamos o padrão de estratégia, permitindo selecionar os componentes que definem o comportamento de um tipo específico de inimigo, como ilustrado no diagrama abaixo:
 
+![Strategy](Estrutura do jogo/Strategy_Pattern_UML.png)
+
 #### Diagrama final
 
 Após as fases de desenvolvimento, o diagrama do nosso jogo tornou-se mais completo e detalhado em comparação com o protótipo criado no início do projeto. Ele está estruturado da seguinte forma:
+
+![Game](Estrutura do jogo/Game_UML.png)
 
 ## Integrantes do grupo e seus NUSP
 Atenágoras Silva - 5447262
