@@ -122,11 +122,11 @@ Lucas Eiji Uchiyama - 11807470
 
 Marcelo Mendes Spessoto Junior - 12542380
 
-## Orientadores do projeto
+## Orientadores do projeto/Project 
 Fabio Kon: Professor
 
 Isaque Alves: Monitor
 
-## Créditos
+## Créditos/Credits
 SpaceStationAda - Jestan
 sci-fi blade runner/terminator-like ominous dytopian tense dark thriller horror sfx  - Simonus18
