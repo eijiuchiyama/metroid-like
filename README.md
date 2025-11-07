@@ -1,16 +1,16 @@
 # Metroid-Like Game
 Este projeto é iniciado como o trabalho solicitado pelo curso [MAC0413/5714 - Tópicos Avançados de Programação Orientada a Objetos (2024)](https://edisciplinas.usp.br/course/view.php?id=121856) oferecido pelo IME-USP no segundo semestre do ano de 2024. Neste projeto implementaremos uma versão contemporânea do jogo clássico [Metroid](https://en.wikipedia.org/wiki/Metroid) utilizando a engine livre [Godot](https://godotengine.org/), oferecendo um novo projeto gráfico e uma estória alternativa.
 
-![Logo](Estrutura do jogo/Logo.png)
+![Logo](estrutura/Logo.png)
 
 ## Descrição do jogo
 Durante o projeto, implementaremos os mecanismos mais característicos do jogo clássico Metroid a seguir:
 
-![Features](Estrutura do jogo/Features.png)
+![Features](estrutura/Features.png)
 
 Com base nisto, construímos o seguinte diagrama de classes para ajudar o processo de desenvolvimento:
 
-![Class](Estrutura do jogo/Class.jpg)
+![Class](estrutura/Class.jpg)
 
 **OBS: Durante o processo de desenvolvimento do jogo, muitas mudanças foram realizadas em relação às classes e o diagrama abaixo está desatualizado.
 Na seção de relatório, para cada padrão implementado, haverá uma seção explicando a implementação definitiva dele, e, para a entrega final, haverá 
@@ -69,7 +69,7 @@ Entretanto, a adoção de tal padrão ainda é interessante para o projeto visan
 
 Em resumo, conforme a complexidade de um jogo aumenta, os estados tendem a possuirem maiores especificidades e propriedades únicas. No estado atual do projeto, a adoção do padrão auxilia no gerenciamento de animações e facilita a adição de futuras funcionalidades. Outra observação é que a habilidade de atirar está sendo implementada por outro membro do grupo e com base no padrão Estratégia, mas, em um momento no futuro, espera-se incorporar a lógica de tiro em um novo estado.
 
-![State](Estrutura do jogo/State_Pattern_UML.png)
+![State](estrutura/State_Pattern_UML.png)
 
 Observação: Esse diagrama representa como o padrão foi implementado via script. Em Godot, existe a separação entre cenas/nós e scripts (código atribuído ao nó). Na cena do jogador, o nó do jogador "contém" o nó do StateManager (ou seja é nó pai do nó StateManger), mas, por código, não há interação direta entre essas classes. 
 
@@ -80,7 +80,7 @@ Na fase 2, utilizamos o padrão estratégia (strategy) para facilitar a troca de
 #### Padrão de Fábrica (Factory pattern)
 Como os diferentes armas possuem os mesmos métodos que podem ser acessadas pelas outras classes, foi aplicado o padrão de fábbrica junto com de estratégia a fim de evitar o uso dos desvios condicionais para identificação do tipo de arma, com isso foi possível diminuir a repetição de código e consequentemente facilitar a sua leitura e entendimento.
 
-![Factory](Estrutura do jogo/Factory_Pattern_UML.png)
+![Factory](estrutura/Factory_Pattern_UML.png)
 
 #### Atualizações no padrão de Estados (State Pattern)
 
@@ -99,19 +99,19 @@ Nesta fase, o jogo está quase concluído, com a maioria das funcionalidades pla
 
 Sendo uma das funcionalidades oferecidas pela engine Godot, não foi necessário implementar nosso próprio código para utilizar este padrão. Para isso, basta adicionar a classe que desejamos usar como Singleton na seção correspondente da engine. Assim, ela pode ser acessada de forma única em todo o jogo:
 
-![Singleton](Estrutura do jogo/Singleton_Pattern.png)
+![Singleton](estrutura/Singleton_Pattern.png)
 
 #### Padrão de Estratégia (Strategy Pattern)
 
 Os inimigos do jogo podem apresentar diversos tipos de movimento e ataque contra o jogador, sendo muitas vezes idênticos entre si em certos aspectos. Para evitar a repetição de código, utilizamos o padrão de estratégia, permitindo selecionar os componentes que definem o comportamento de um tipo específico de inimigo, como ilustrado no diagrama abaixo:
 
-![Strategy](Estrutura do jogo/Strategy_Pattern_UML.png)
+![Strategy](estrutura/Strategy_Pattern_UML.png)
 
 #### Diagrama final
 
 Após as fases de desenvolvimento, o diagrama do nosso jogo tornou-se mais completo e detalhado em comparação com o protótipo criado no início do projeto. Ele está estruturado da seguinte forma:
 
-![Game](Estrutura do jogo/Game_UML.png)
+![Game](estrutura/Game_UML.png)
 
 ## Integrantes do grupo e seus NUSP
 Atenágoras Silva - 5447262
